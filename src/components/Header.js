@@ -1,18 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import profileIcon from '../images/profileIcon.svg';
+import searchIcon from '../images/searchIcon.svg';
 
-function Header() {
+function Header({ title }) {
   return (
-    <div className="meals">
-      <span className="logo">TRYBE</span>
+    <header>
       <object
-        className="rocksGlass"
+        data-testid="profile-top-btn"
         type="image/svg+xml"
-        data={ rockGlass }
+        data={ profileIcon }
       >
-        Glass
+        Profile Icon
       </object>
-    </div>
+      <h3 data-testid="page-title">{title}</h3>
+      <object
+        data-testid="search-top-btn"
+        type="image/svg+xml"
+        data={ searchIcon }
+      >
+        Search Icon
+      </object>
+    </header>
   );
+}
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
 }
 
 export default Header;
