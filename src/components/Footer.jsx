@@ -16,11 +16,13 @@ function Footer() {
         height={ 30 }
         src={ exploreIcon }
         alt="Explore Icon"
+        data-testid="explore-bottom-btn"
       />
       <img
         height={ 30 }
         src={ mealIcon }
         alt="Meal Icon"
+        data-testid="food-bottom-btn"
       />
     </footer>
   );
