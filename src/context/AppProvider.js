@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // apagei o { useState } pro lint parar de reclamar
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AppContext from './AppContext';
 
@@ -7,6 +7,7 @@ function AppProvider({ children }) {
   const [initialRecipes, setInitialRecipes] = useState([]);
   const [category, setCategory] = useState([]);
   const [renderCategoryRecipe, setRenderCategoryRecipe] = useState(false);
+  const [drinksFilter, setDrinksFilter] = useState([]);
 
   const stateDefault = {
     mealsFilter,
@@ -17,6 +18,8 @@ function AppProvider({ children }) {
     setCategory,
     renderCategoryRecipe,
     setRenderCategoryRecipe,
+    drinksFilter,
+    setDrinksFilter,
   };
   return (
     <AppContext.Provider value={ stateDefault }>
