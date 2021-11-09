@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CardRecipe from '../components/CardRecipe';
 import useFetchRecipes from '../hooks/useFetchRecipes';
 import CategoryButtons from '../components/CategoryButtons';
 import useFetchCategoryList from '../hooks/useFetchCategoryList';
+import AppContext from '../context/AppContext';
 
 function DrinkRecipes() {
+  const { initialRecipes } = useContext(AppContext);
+
   const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
   const urlCategory = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list';
+
   const key = 'drinks';
 
-  const arrayOfRecipes = useFetchRecipes(url, key);
+  useFetchRecipes(url, key);
   const arrayOfCategory = useFetchCategoryList(urlCategory, key);
 
   return (
@@ -20,7 +24,7 @@ function DrinkRecipes() {
       {arrayOfCategory.map((obj, index) => (
         <CategoryButtons key={ index } categoryName={ obj.strCategory } type={ key } />
       ))}
-      { arrayOfRecipes.map((objRecipe, index) => (
+      { initialRecipes.map((objRecipe, index) => (
         <CardRecipe key={ index } type="Drink" recipe={ objRecipe } index={ index } />
       )) }
       <Footer />

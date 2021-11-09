@@ -8,7 +8,7 @@ function AppProvider({ children }) {
   const [initialRecipes, setInitialRecipes] = useState([]);
   const [category, setCategory] = useState([]);
   const [renderCategoryRecipe, setRenderCategoryRecipe] = useState(false);
-  
+
   const stateDefault = {
     mealsFilter,
     setMealsFilter,
