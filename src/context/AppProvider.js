@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import AppContext from './AppContext';
 
 function AppProvider({ children }) {
-  // const [state, setstate] = useState(initialState);
   const [mealsFilter, setMealsFilter] = useState([]);
   const [initialRecipes, setInitialRecipes] = useState([]);
   const [category, setCategory] = useState([]);
