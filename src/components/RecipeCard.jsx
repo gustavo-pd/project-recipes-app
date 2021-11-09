@@ -5,16 +5,14 @@ import PropTypes from 'prop-types';
 function renderDrinks(limitedCardsArray) {
   return (
     limitedCardsArray.map((recipe, index) => (
-      <div key={ recipe.strDrink }>
+      <div key={ recipe.strDrink } data-testid={ `${index}-recipe-card` }>
         <img
-          data-testid={ `${index + 1}-card-img` }
+          data-testid={ `${index}-card-img` }
           alt="card-img"
           src={ recipe.strDrinkThumb }
           height="100px"
         />
-        <p data-testid={ `${index + 1}-card-name` }> </p>
-        {' '}
-        {recipe.strDrink}
+        <p data-testid={ `${index}-card-name` }>{recipe.strDrink}</p>
       </div>))
   );
 }
@@ -22,16 +20,14 @@ function renderDrinks(limitedCardsArray) {
 function renderMeals(limitedCardsArray) {
   return (
     limitedCardsArray.map((recipe, index) => (
-      <div key={ recipe.strMeal }>
+      <div key={ recipe.strMeal } data-testid={ `${index}-recipe-card` }>
         <img
           data-testid={ `${index}-card-img` }
           alt="card-img"
           src={ recipe.strMealThumb }
           height="100px"
         />
-        <p data-testid={ `${index}-card-name` }> </p>
-        {' '}
-        {recipe.strMeal}
+        <p data-testid={ `${index}-card-name` }>{recipe.strMeal}</p>
       </div>))
   );
 }
