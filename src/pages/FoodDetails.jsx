@@ -1,9 +1,12 @@
 import React from 'react';
+import HeaderRecipes from '../components/details recipes/HeaderRecipes';
+import SectionRecipes from '../components/details recipes/SectionRecipes';
 
 function FoodDetails() {
   return (
     <main>
-      FoodDetails
+      <HeaderRecipes />
+      <SectionRecipes />
     </main>
   );
 }
