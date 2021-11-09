@@ -3,14 +3,17 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 
 import Switcher from './components/Switcher';
+import AppProvider from './context/AppProvider';
 
 function App() {
   return (
     <main className="main">
-      <span>HomePage</span>
-      <BrowserRouter>
-        <Switcher />
-      </BrowserRouter>
+      <AppProvider>
+        <span>HomePage</span>
+        <BrowserRouter>
+          <Switcher />
+        </BrowserRouter>
+      </AppProvider>
     </main>
   );
 }
