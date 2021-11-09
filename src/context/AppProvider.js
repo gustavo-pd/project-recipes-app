@@ -5,10 +5,13 @@ import AppContext from './AppContext';
 function AppProvider({ children }) {
   // const [state, setstate] = useState(initialState);
   const [mealsFilter, setMealsFilter] = useState([]);
+  const [initialRecipes, setInitialRecipes] = useState([]);
 
   const stateDefault = {
     mealsFilter,
     setMealsFilter,
+    initialRecipes,
+    setInitialRecipes,
   };
   return (
     <AppContext.Provider value={ stateDefault }>

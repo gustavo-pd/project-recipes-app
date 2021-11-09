@@ -14,9 +14,9 @@ function SearchBar() {
       setMealsFilter(mealsFilter);
       console.log(mealsFilter);
     }
-    // fetchByName(inputValue);
+    fetchByName(inputValue);
 
-    // fetchByLetter(inputValue);
+    fetchByLetter(inputValue);
   };
 
   return (

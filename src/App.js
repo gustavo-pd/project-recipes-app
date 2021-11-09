@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
+import AppProvider from './context/AppProvider';
 
 import Switcher from './components/Switcher';
 
@@ -9,7 +10,9 @@ function App() {
     <main className="main">
       <span>HomePage</span>
       <BrowserRouter>
-        <Switcher />
+        <AppProvider>
+          <Switcher />
+        </AppProvider>
       </BrowserRouter>
     </main>
   );
