@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './css/Footer.css';
 import drinkIcon from '../images/drinkIcon.svg';
 import exploreIcon from '../images/exploreIcon.svg';
 import mealIcon from '../images/mealIcon.svg';
+import AppContext from '../context/AppContext';
 
 function Footer() {
+  const { setSearchBar } = useContext(AppContext);
   return (
     <footer className="footer" data-testid="footer">
-      <Link to="/bebidas">
+      <Link to="/bebidas" onClick={ () => setSearchBar(false) }>
         <img
           height={ 30 }
           src={ drinkIcon }
@@ -26,7 +28,7 @@ function Footer() {
           data-testid="explore-bottom-btn"
         />
       </Link>
-      <Link to="/comidas">
+      <Link to="/comidas" onClick={ () => setSearchBar(false) }>
         <img
           height={ 30 }
           src={ mealIcon }

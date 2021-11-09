@@ -8,7 +8,7 @@ import CategoryButtons from '../components/CategoryButtons';
 import AppContext from '../context/AppContext';
 
 function FoodRecipes() {
-  const { initialRecipes, setInitialRecipes } = useContext(AppContext);
+  const { initialRecipes, setInitialRecipes, searchBar } = useContext(AppContext);
   const [initialFood, setInitalFood] = useState([]);
 
   const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
@@ -30,15 +30,15 @@ function FoodRecipes() {
         All
 
       </button>
-      {arrayOfCategory.map((obj, index) => (
+      { !searchBar && (arrayOfCategory.map((obj, index) => (
         <CategoryButtons
           key={ index }
           categoryName={ obj.strCategory }
           type={ key }
           initial={ initialFood }
         />
-      ))}
-      { initialRecipes.map((objRecipe, index) => (
+      )))}
+      {!searchBar && (initialRecipes.map((objRecipe, index) => (
         <CardRecipe
           page="comidas"
           id={ objRecipe.idMeal }
@@ -47,7 +47,7 @@ function FoodRecipes() {
           recipe={ objRecipe }
           index={ index }
         />
-      )) }
+      )))}
       <Footer />
     </main>
   );
