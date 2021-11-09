@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import AppContext from './AppContext';
-import data from '../services/data';
 
 function AppProvider({ children }) {
-  const [state, setState] = useState(data);
+  // const [state, setState] = useState([]);
   return (
-    <AppContext.Provider value={ { state, setState } }>
+    <AppContext.Provider>
       { children }
     </AppContext.Provider>
   );
