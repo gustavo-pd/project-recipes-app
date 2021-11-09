@@ -39,7 +39,14 @@ function FoodRecipes() {
         />
       ))}
       { initialRecipes.map((objRecipe, index) => (
-        <CardRecipe key={ index } type="Meal" recipe={ objRecipe } index={ index } />
+        <CardRecipe
+          page="comidas"
+          id={ objRecipe.idMeal }
+          key={ index }
+          type="Meal"
+          recipe={ objRecipe }
+          index={ index }
+        />
       )) }
       <Footer />
     </main>
