@@ -8,7 +8,7 @@ import useFetchCategoryList from '../hooks/useFetchCategoryList';
 import AppContext from '../context/AppContext';
 
 function DrinkRecipes() {
-  const { initialRecipes } = useContext(AppContext);
+  const { initialRecipes, setInitialRecipes } = useContext(AppContext);
   const [initialDrinks, setInitialDrinks] = useState([]);
 
   const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
@@ -22,6 +22,14 @@ function DrinkRecipes() {
   return (
     <main>
       <Header title="Bebidas" bool />
+      <button
+        data-testid="All-category-filter"
+        type="button"
+        onClick={ () => setInitialRecipes(initialDrinks) }
+      >
+        All
+
+      </button>
       {arrayOfCategory.map((obj, index) => (
         <CategoryButtons
           key={ index }

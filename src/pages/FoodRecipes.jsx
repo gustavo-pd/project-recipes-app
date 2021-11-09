@@ -8,7 +8,7 @@ import CategoryButtons from '../components/CategoryButtons';
 import AppContext from '../context/AppContext';
 
 function FoodRecipes() {
-  const { initialRecipes } = useContext(AppContext);
+  const { initialRecipes, setInitialRecipes } = useContext(AppContext);
   const [initialFood, setInitalFood] = useState([]);
 
   const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
@@ -22,6 +22,14 @@ function FoodRecipes() {
   return (
     <main>
       <Header title="Comidas" bool />
+      <button
+        data-testid="All-category-filter"
+        type="button"
+        onClick={ () => setInitialRecipes(initialFood) }
+      >
+        All
+
+      </button>
       {arrayOfCategory.map((obj, index) => (
         <CategoryButtons
           key={ index }
