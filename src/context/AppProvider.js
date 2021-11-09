@@ -7,7 +7,8 @@ function AppProvider({ children }) {
   const [mealsFilter, setMealsFilter] = useState([]);
   const [initialRecipes, setInitialRecipes] = useState([]);
   const [category, setCategory] = useState([]);
-
+  const [renderCategoryRecipe, setRenderCategoryRecipe] = useState(false);
+  
   const stateDefault = {
     mealsFilter,
     setMealsFilter,
@@ -15,6 +16,8 @@ function AppProvider({ children }) {
     setInitialRecipes,
     category,
     setCategory,
+    renderCategoryRecipe,
+    setRenderCategoryRecipe,
   };
   return (
     <AppContext.Provider value={ stateDefault }>

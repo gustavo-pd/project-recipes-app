@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import CardRecipe from '../components/CardRecipe';
 import useFetchRecipes from '../hooks/useFetchRecipes';
 import CategoryButtons from '../components/CategoryButtons';
-import useFetchCategory from '../hooks/useFetchCategory';
+import useFetchCategoryList from '../hooks/useFetchCategoryList';
 
 function DrinkRecipes() {
   const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
@@ -12,13 +12,13 @@ function DrinkRecipes() {
   const key = 'drinks';
 
   const arrayOfRecipes = useFetchRecipes(url, key);
-  const arrayOfCategory = useFetchCategory(urlCategory, key);
+  const arrayOfCategory = useFetchCategoryList(urlCategory, key);
 
   return (
     <main>
       <Header title="Bebidas" bool />
       {arrayOfCategory.map((obj, index) => (
-        <CategoryButtons key={ index } categoryName={ obj.strCategory } />
+        <CategoryButtons key={ index } categoryName={ obj.strCategory } type={ key } />
       ))}
       { arrayOfRecipes.map((objRecipe, index) => (
         <CardRecipe key={ index } type="Drink" recipe={ objRecipe } index={ index } />

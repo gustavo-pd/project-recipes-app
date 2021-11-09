@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import AppContext from '../context/AppContext';
 import categorysAPI from '../services/categorysAPI';
 
-function useFetchCategory(url, key) {
+function useFetchCategoryList(url, key) {
   const { setCategory, category } = useContext(AppContext);
   useEffect(() => {
     (async () => {
@@ -17,4 +17,4 @@ function useFetchCategory(url, key) {
   return arrayOfCategory;
 }
 
-export default useFetchCategory;
+export default useFetchCategoryList;
