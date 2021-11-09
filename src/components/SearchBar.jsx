@@ -14,7 +14,7 @@ import {
 import RecipeCard from './RecipeCard';
 
 function SearchBar() {
-  const { setMealsFilter, setDrinksFilter } = useContext(AppContext);
+  const { setMealsFilter, setDrinksFilter, searchBar } = useContext(AppContext);
   const [searchFilter, setSearchBarFilter] = useState('nome');
   const [inputValue, setInputValue] = useState('');
   const [cardArray, setCardArray] = useState([]);
@@ -179,7 +179,7 @@ function SearchBar() {
         Buscar
 
       </button>
-      <RecipeCard cardArray={ cardArray } />
+      { searchBar && <RecipeCard cardArray={ cardArray } /> }
     </>
   );
 }

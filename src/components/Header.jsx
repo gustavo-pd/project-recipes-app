@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
 import SearchBar from './SearchBar';
+import AppContext from '../context/AppContext';
 
 function Header({ title, bool }) {
+  const { setSearchBar } = useContext(AppContext);
   const [showSearchBar, setShowSearchBar] = useState(false);
+
+  function handleClick() {
+    setShowSearchBar(!showSearchBar);
+    setSearchBar(true);
+  }
 
   return (
     <>
@@ -18,7 +25,7 @@ function Header({ title, bool }) {
         {bool && (
           <button
             type="button"
-            onClick={ () => setShowSearchBar(!showSearchBar) }
+            onClick={ handleClick }
           >
             <img
               data-testid="search-top-btn"
