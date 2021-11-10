@@ -14,7 +14,7 @@ function FoodDetails(props) {
 
   return (
     <main>
-      <HeaderRecipes />
+      <HeaderRecipes type="Meal" />
       <Instructions />
       <Ingredients recipe={ detailsPage } />
     </main>
