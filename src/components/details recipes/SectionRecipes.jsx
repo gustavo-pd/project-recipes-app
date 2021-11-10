@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 
-function SectionRecipes({ strCategory }) {
+function SectionRecipes() {
+  const { detailsPage } = useContext(AppContext);
   return (
-    <section>
-      <p data-testid="recipe-category">{strCategory}</p>
-
-    </section>
+    <section />
   );
 }
 

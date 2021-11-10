@@ -5,18 +5,19 @@ import SectionRecipes from '../components/details recipes/SectionRecipes';
 
 function FoodDetails(props) {
   const { match: { params: { id } } } = props;
-  const { setDetailsPage } = useContext(AppContext);
+  const { detailsPage, setDetailsPage } = useContext(AppContext);
+
+  async function getAPI() {
+    const idDaReceita = id;
+    const responseAPI = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idDaReceita}`);
+    const results = await responseAPI.json();
+    const foodDetailsResults = results.meals[0];
+    setDetailsPage(foodDetailsResults);
+  }
 
   useEffect(() => {
-    async function getAPI() {
-      const idDaReceita = id;
-      console.log(id);
-      const responseAPI = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idDaReceita}`);
-      const results = await responseAPI.json();
-      const foodDetailsResults = results.meals[0];
-    }
     getAPI();
-  });
+  }, []);
 
   return (
     <main>
