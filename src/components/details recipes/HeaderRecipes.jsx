@@ -1,13 +1,21 @@
-import React from 'react';
-// import data from '../../services/data';
+import React, { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 
-function HeaderRecipes({ strMealThumb, strMeal }) {
+function HeaderRecipes() {
+  const { detailsPage } = useContext(AppContext);
+  const { strMeal, strMealThumb, strCategory } = detailsPage;
   return (
     <header>
-      <img src={ strMealThumb } alt={ strMeal } data-testid="recipe-photo" />
-      <h2 data-testid="recipe-title">{strMeal}</h2>
+      <img
+        height="100px"
+        src={ strMealThumb }
+        alt={ strMeal }
+        data-testid="recipe-photo"
+      />
+      <h1 data-testid="recipe-title">{strMeal}</h1>
       <button type="button" data-testid="share-btn">Search</button>
       <button type="button" data-testid="favorite-btn">Favorites</button>
+      <p data-testid="recipe-category">{strCategory}</p>
     </header>
   );
 }
