@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AppContext from './AppContext';
 
 function AppProvider({ children }) {
-  // const [state, setstate] = useState(initialState);
+  const [mealsFilter, setMealsFilter] = useState([]);
+  const [drinksFilter, setDrinksFilter] = useState([]);
 
-  const stateDefault = {};
+  const stateDefault = {
+    mealsFilter,
+    setMealsFilter,
+    drinksFilter,
+    setDrinksFilter,
+  };
   return (
     <AppContext.Provider value={ stateDefault }>
       { children }
