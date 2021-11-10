@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CheckBox from './CheckBox';
+import CheckBox from '../CheckBox';
 
 function Ingredients({ recipe }) {
   const arrayRecipe = recipe[0];
