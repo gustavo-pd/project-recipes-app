@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
-import SectionRecipes from '../components/details recipes/SectionRecipes';
+import Instructions from '../components/details recipes/Instructions';
 import Ingredients from '../components/details recipes/Ingredients';
 import AppContext from '../context/AppContext';
 
@@ -15,7 +15,7 @@ function FoodDetails(props) {
   return (
     <main>
       <HeaderRecipes />
-      <SectionRecipes />
+      <Instructions />
       <Ingredients recipe={ detailsPage } />
     </main>
   );

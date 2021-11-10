@@ -18,7 +18,10 @@ function Ingredients({ recipe }) {
       <h3>Ingredients</h3>
       <ol>
         { igredientes.map((string, index) => (
-          <li key={ index }>
+          <li
+            key={ index }
+            data-testid={ `${index}-ingredient-name-and-measure` }
+          >
             <CheckBox />
             {string}
           </li>)) }
