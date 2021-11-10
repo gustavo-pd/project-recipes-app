@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CheckBox from './CheckBox';
+import CheckBox from '../CheckBox';
 
 function Ingredients({ recipe }) {
-  const arrayRecipe = recipe[0];
+  const arrayRecipe = recipe;
   const keys = Object.keys(arrayRecipe);
   const values = Object.values(arrayRecipe);
   let igredientes = [];

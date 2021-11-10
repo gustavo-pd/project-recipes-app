@@ -1,28 +1,22 @@
-import React, { useEffect, useContext } from 'react';
-import AppContext from '../context/AppContext';
+import React, { useContext } from 'react';
+import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import SectionRecipes from '../components/details recipes/SectionRecipes';
+import Ingredients from '../components/details recipes/Ingredients';
+import AppContext from '../context/AppContext';
 
 function FoodDetails(props) {
+  const { detailsPage } = useContext(AppContext);
   const { match: { params: { id } } } = props;
-  const { setDetailsPage } = useContext(AppContext);
-
-  async function getAPI() {
-    const idDaReceita = id;
-    const responseAPI = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idDaReceita}`);
-    const results = await responseAPI.json();
-    const foodDetailsResults = results.meals[0];
-    setDetailsPage(foodDetailsResults);
-  }
-
-  useEffect(() => {
-    getAPI();
-  }, []);
+  const foodURL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+  const meals = 'meals';
+  useFetchRecipeDetails(foodURL, meals);
 
   return (
     <main>
       <HeaderRecipes />
       <SectionRecipes />
+      <Ingredients recipe={ detailsPage } />
     </main>
   );
 }
