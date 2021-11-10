@@ -22,14 +22,15 @@ function DrinkRecipes() {
   return (
     <main>
       <Header title="Bebidas" bool />
-      <button
-        data-testid="All-category-filter"
-        type="button"
-        onClick={ () => setInitialRecipes(initialDrinks) }
-      >
-        All
+      { !searchBar && (
+        <button
+          data-testid="All-category-filter"
+          type="button"
+          onClick={ () => setInitialRecipes(initialDrinks) }
+        >
+          All
 
-      </button>
+        </button>)}
       { !searchBar && arrayOfCategory.map((obj, index) => (
         <CategoryButtons
           key={ index }
