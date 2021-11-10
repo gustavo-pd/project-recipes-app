@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { shape, func } from 'prop-types';
+import randomItemFetch from '../services/randomAPI';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 function ExploreFood({ history }) {
-  const searchByIngredient = () => {
-    history.push('/explorar/comidas/ingredientes');
-  };
+  const [randomId, setRandomId] = useState();
 
-  const searchByArea = () => {
-    history.push('/explorar/comidas/area');
+  useEffect(() => {
+    randomItemFetch('themealdb')
+      .then((response) => setRandomId(response.meals[0].idMeal));
+  }, []);
+
+  const handleClick = ({ target }) => {
+    const btn = target.innerHTML;
+
+    if (btn === 'Por Ingredientes') {
+      history.push('/explorar/comidas/ingredientes');
+    } else if (btn === 'Por Local de Origem') {
+      history.push('/explorar/comidas/area');
+    } else if (btn === 'Me Surpreenda!') {
+      history.push(`/comidas/${randomId}`);
+    }
   };
 
   return (
@@ -20,7 +32,7 @@ function ExploreFood({ history }) {
           data-testid="explore-by-ingredient"
           type="button"
           className="by-ingredient-btn"
-          onClick={ searchByIngredient }
+          onClick={ handleClick }
         >
           Por Ingredientes
         </button>
@@ -28,13 +40,14 @@ function ExploreFood({ history }) {
           data-testid="explore-by-area"
           type="button"
           className="by-area-btn"
-          onClick={ searchByArea }
+          onClick={ handleClick }
         >
           Por Local de Origem
         </button>
         <button
           data-testid="explore-surprise"
           type="button"
+          onClick={ handleClick }
         >
           Me Surpreenda!
         </button>
