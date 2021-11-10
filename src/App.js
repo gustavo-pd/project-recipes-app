@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-
-import Switcher from './components/Switcher';
 import AppProvider from './context/AppProvider';
+import Switcher from './components/Switcher';
 
 function App() {
   return (
