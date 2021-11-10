@@ -5,7 +5,7 @@ import SectionRecipes from '../components/details recipes/SectionRecipes';
 
 function FoodDetails(props) {
   const { match: { params: { id } } } = props;
-  const { detailsPage, setDetailsPage } = useContext(AppContext);
+  const { setDetailsPage } = useContext(AppContext);
 
   async function getAPI() {
     const idDaReceita = id;
