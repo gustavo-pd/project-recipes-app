@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { shape, func } from 'prop-types';
+import '../components/css/Explore.css';
 import randomItemFetch from '../services/randomAPI';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -29,7 +30,7 @@ function ExploreDrinks({ history }) {
         <button
           data-testid="explore-by-ingredient"
           type="button"
-          className="by-ingredient-btn"
+          className="explore-btn"
           onClick={ handleClick }
         >
           Por Ingredientes
@@ -37,6 +38,7 @@ function ExploreDrinks({ history }) {
         <button
           data-testid="explore-surprise"
           type="button"
+          className="explore-btn"
           onClick={ handleClick }
         >
           Me Surpreenda!

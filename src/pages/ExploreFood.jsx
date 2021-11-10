@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { shape, func } from 'prop-types';
+import '../components/css/Explore.css';
 import randomItemFetch from '../services/randomAPI';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -31,7 +32,7 @@ function ExploreFood({ history }) {
         <button
           data-testid="explore-by-ingredient"
           type="button"
-          className="by-ingredient-btn"
+          className="explore-btn"
           onClick={ handleClick }
         >
           Por Ingredientes
@@ -39,7 +40,7 @@ function ExploreFood({ history }) {
         <button
           data-testid="explore-by-area"
           type="button"
-          className="by-area-btn"
+          className="explore-btn"
           onClick={ handleClick }
         >
           Por Local de Origem
@@ -48,6 +49,7 @@ function ExploreFood({ history }) {
           data-testid="explore-surprise"
           type="button"
           onClick={ handleClick }
+          className="explore-btn"
         >
           Me Surpreenda!
         </button>

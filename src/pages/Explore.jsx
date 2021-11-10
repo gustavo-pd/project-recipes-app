@@ -20,7 +20,7 @@ function Explore({ history }) {
         <button
           data-testid="explore-food"
           type="button"
-          className="explore-food-btn"
+          className="explore-btn"
           onClick={ redirectExploreFood }
         >
           Explorar Comidas
@@ -28,7 +28,7 @@ function Explore({ history }) {
         <button
           data-testid="explore-drinks"
           type="button"
-          className="explore-drinks-btn"
+          className="explore-btn"
           onClick={ redirectExploreDrinks }
         >
           Explorar Bebidas
