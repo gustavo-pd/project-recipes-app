@@ -22,6 +22,7 @@ class Switcher extends Component {
   render() {
     return (
       <Switch>
+        <Route exact path="/explorar/bebidas/area" component={ NotFound } />
         <Route
           path="/explorar/comidas/ingredientes"
           component={ FoodsByIngredients }
