@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CheckBox from '../CheckBox';
+import Lista from './Lista';
 
-function Ingredients({ recipe }) {
+function Ingredients({ recipe, boolean = false, id, type }) {
   const arrayRecipe = recipe;
   const keys = Object.keys(arrayRecipe);
   const values = Object.values(arrayRecipe);
   let igredientes = [];
   keys.forEach((key, index) => {
-    if (key.includes('strIngredient') && values[index] !== '') {
+    if (key.includes('strIngredient') && values[index]) {
       igredientes = [...igredientes, values[index]];
     }
   });
@@ -18,13 +18,15 @@ function Ingredients({ recipe }) {
       <h3>Ingredients</h3>
       <ol>
         { igredientes.map((string, index) => (
-          <li
+          <Lista
             key={ index }
-            data-testid={ `${index}-ingredient-name-and-measure` }
-          >
-            <CheckBox />
-            {string}
-          </li>)) }
+            string={ string }
+            index={ index }
+            boolean={ boolean }
+            id={ id }
+            type={ type }
+          />
+        )) }
       </ol>
     </main>
   );
@@ -32,6 +34,9 @@ function Ingredients({ recipe }) {
 
 Ingredients.propTypes = {
   recipe: PropTypes.arrayOf(PropTypes.any).isRequired,
+  boolean: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default Ingredients;

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import AppContext from '../../context/AppContext';
 
 function HeaderRecipes({ type }) {
@@ -21,5 +22,9 @@ function HeaderRecipes({ type }) {
     </header>
   );
 }
+
+HeaderRecipes.propTypes = {
+  type: PropTypes.string.isRequired,
+};
 
 export default HeaderRecipes;

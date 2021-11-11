@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Instructions from '../components/details recipes/Instructions';
@@ -20,4 +21,9 @@ function DrinkDetails(props) {
     </main>
   );
 }
+
+DrinkDetails.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
 export default DrinkDetails;
