@@ -6,9 +6,8 @@ function useFetchRecomendacoes(url, type) {
   const { setRecomendacoes } = useContext(AppContext);
   useEffect(() => {
     (async () => {
-      const resultAPI = await recomendacoesAPI(url, type);
-      const randomResults = resultAPI
-        .setRecomendacoes(randomResults);
+      const result = await recomendacoesAPI(url, type);
+      setRecomendacoes(result);
     })();
   }, []);
 }
