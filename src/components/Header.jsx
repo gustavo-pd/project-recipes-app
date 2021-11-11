@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
+import './css/Header.css';
 import { Link } from 'react-router-dom';
 import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
@@ -17,7 +18,7 @@ function Header({ title, bool }) {
 
   return (
     <>
-      <header>
+      <header className="header">
         <Link to="/perfil">
           <img data-testid="profile-top-btn" src={ profileIcon } alt="profile" />
         </Link>
