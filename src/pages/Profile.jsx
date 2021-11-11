@@ -7,6 +7,9 @@ function Profile() {
   const [email, setEmail] = useState('');
   useEffect(() => {
     (async () => {
+      if (!JSON.parse(localStorage.getItem('user'))) {
+        return localStorage.setItem('user', JSON.stringify(''));
+      }
       const storage = await JSON.parse(localStorage.getItem('user'));
       await setEmail(storage.email);
     })();
