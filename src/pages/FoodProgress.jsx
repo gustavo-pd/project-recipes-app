@@ -1,17 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Ingredients from '../components/details recipes/Ingredients';
 import Instructions from '../components/details recipes/Instructions';
 import AppContext from '../context/AppContext';
+import { useHistory } from 'react-router';
 
 function FoodProgress(props) {
-  const { detailsPage } = useContext(AppContext);
+  const history = useHistory();
+  const { detailsPage, endRecipe } = useContext(AppContext);
   const { match: { params: { id } } } = props;
   const foodURL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const meals = 'meals';
   useFetchRecipeDetails(foodURL, meals);
+
+  function handleClik() {
+    history.push('/receitas-feitas');
+  }
 
   return (
     <main>
@@ -21,9 +27,10 @@ function FoodProgress(props) {
       <button
         type="button"
         data-testid="finish-recipe-btn"
+        disabled={ endRecipe }
+        onClick={ handleClik }
       >
         Finalizar Receita
-
       </button>
     </main>
   );

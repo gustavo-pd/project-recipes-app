@@ -18,7 +18,7 @@ function HeaderRecipes({ type }) {
   const title = `str${type}`;
   const id = `id${type}`;
 
-  const TRES_SEGUNDOS = 3000;
+  const TRES_SEGUNDOS = 10000;
 
   function handleShare() {
     const url = `http://localhost:3000/${page}/${detailsPage[id]}`;
