@@ -1,13 +1,13 @@
 .cardRecipe {
   display: grid;
   grid-template-rows: 100px 100px;
-  width: 162px;
   height: 172px;
   left: 11px;
   top: 1165px;
+  width: 162px;
 }
 
 .imageCardRecipe {
-  width: 90px;
   height: 90px;
+  width: 90px;
 }
