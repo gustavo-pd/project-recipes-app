@@ -9,6 +9,7 @@ function AppProvider({ children }) {
   const [renderCategoryRecipe, setRenderCategoryRecipe] = useState(false);
   const [drinksFilter, setDrinksFilter] = useState([]);
   const [searchBar, setSearchBar] = useState(false);
+  const [detailsPage, setDetailsPage] = useState([]);
 
   const stateDefault = {
     mealsFilter,
@@ -23,6 +24,8 @@ function AppProvider({ children }) {
     setDrinksFilter,
     searchBar,
     setSearchBar,
+    detailsPage,
+    setDetailsPage,
   };
   return (
     <AppContext.Provider value={ stateDefault }>

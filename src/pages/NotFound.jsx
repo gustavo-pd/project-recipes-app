@@ -3,8 +3,9 @@ import React from 'react';
 function NotFound() {
   return (
     <main>
-      NotFound
+      Not Found
     </main>
   );
 }
+
 export default NotFound;
