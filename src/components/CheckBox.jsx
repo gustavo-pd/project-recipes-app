@@ -18,6 +18,10 @@ function CheckBox({ boolean = false, setChecked, checked, saveStorage, isChecked
 
 CheckBox.propTypes = {
   boolean: PropTypes.bool.isRequired,
+  setChecked: PropTypes.func.isRequired,
+  checked: PropTypes.bool.isRequired,
+  saveStorage: PropTypes.func.isRequired,
+  isChecked: PropTypes.func.isRequired,
 };
 
 export default CheckBox;

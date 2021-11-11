@@ -35,6 +35,8 @@ function Ingredients({ recipe, boolean = false, id, type }) {
 Ingredients.propTypes = {
   recipe: PropTypes.arrayOf(PropTypes.any).isRequired,
   boolean: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default Ingredients;

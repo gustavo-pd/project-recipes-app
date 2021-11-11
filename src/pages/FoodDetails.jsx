@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Instructions from '../components/details recipes/Instructions';
@@ -22,12 +23,23 @@ function FoodDetails(props) {
       <video
         width="320"
         height="240"
-        src={ strYoutube }
         data-testid="video"
-      />
+        src={ strYoutube }
+      >
+        <track
+          default
+          kind="captions"
+          srcLang="en"
+          src={ strYoutube }
+        />
+      </video>
       <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
     </main>
   );
 }
+
+FoodDetails.propTypes = {
+  match: PropTypes.arrayOf(PropTypes.any).isRequired,
+};
 
 export default FoodDetails;

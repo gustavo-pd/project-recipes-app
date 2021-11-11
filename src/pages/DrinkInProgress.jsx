@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Ingredients from '../components/details recipes/Ingredients';
@@ -20,4 +21,9 @@ function DrinkInProgress() {
     </main>
   );
 }
+
+DrinkInProgress.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
 export default DrinkInProgress;

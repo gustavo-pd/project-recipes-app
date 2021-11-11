@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { checkMeals, checkDrinks, isCheckedDrink, isCheckedMeal } from '../../services/saveInProgressRecipes';
+import { checkMeals, checkDrinks,
+  isCheckedDrink, isCheckedMeal } from '../../services/saveInProgressRecipes';
 import CheckBox from '../CheckBox';
 import './css/Lista.css';
 
@@ -32,7 +33,8 @@ function Lista({ string, index, boolean = false, id, type }) {
   return (
     <li
       className={ isChecked() && 'checkedItem' }
-      data-testid={ boolean ? `${index}-ingredient-step` : `${index}-ingredient-name-and-measure` }
+      data-testid={ boolean ? `${index}-ingredient-step`
+        : `${index}-ingredient-name-and-measure` }
     >
       <CheckBox
         setChecked={ setChecked }
@@ -53,6 +55,8 @@ Lista.propTypes = {
   boolean: PropTypes.bool.isRequired,
   string: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default Lista;
