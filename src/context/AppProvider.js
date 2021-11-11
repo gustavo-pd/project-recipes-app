@@ -10,6 +10,7 @@ function AppProvider({ children }) {
   const [drinksFilter, setDrinksFilter] = useState([]);
   const [searchBar, setSearchBar] = useState(false);
   const [detailsPage, setDetailsPage] = useState([]);
+  const [recomendacoes, setRecomendacoes] = useState([]);
 
   const stateDefault = {
     mealsFilter,
@@ -26,7 +27,10 @@ function AppProvider({ children }) {
     setSearchBar,
     detailsPage,
     setDetailsPage,
+    recomendacoes,
+    setRecomendacoes,
   };
+
   return (
     <AppContext.Provider value={ stateDefault }>
       { children }
