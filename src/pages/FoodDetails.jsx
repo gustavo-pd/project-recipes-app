@@ -1,19 +1,23 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
+import useFetchRecomendacoes from '../hooks/useFetchRecomendacoes';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Instructions from '../components/details recipes/Instructions';
 import Ingredients from '../components/details recipes/Ingredients';
+import CardRecipe from '../components/CardRecipe';
 import AppContext from '../context/AppContext';
 
 function FoodDetails(props) {
-  const { detailsPage } = useContext(AppContext);
+  const { detailsPage, recomendacoes } = useContext(AppContext);
   const { strYoutube } = detailsPage;
-  console.log(strYoutube);
   const { match: { params: { id } } } = props;
   const foodURL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const meals = 'meals';
   useFetchRecipeDetails(foodURL, meals);
+
+  const recommendationsURL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+  useFetchRecomendacoes(recommendationsURL, meals);
 
   return (
     <main>
@@ -33,6 +37,17 @@ function FoodDetails(props) {
           src={ strYoutube }
         />
       </video>
+      {recomendacoes.map((meal, index) => (
+        <CardRecipe
+          page="comidas"
+          id={ meal.idMeal }
+          key={ index }
+          type="Meal"
+          recipe={ meal }
+          index={ index }
+          bool
+        />
+      ))}
       <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
     </main>
   );

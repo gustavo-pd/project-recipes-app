@@ -12,6 +12,7 @@ function AppProvider({ children }) {
   const [detailsPage, setDetailsPage] = useState([]);
   const [disabledButtonPrograss, setDisabledButtonPrograss] = useState(true);
   const [endRecipe, setEndRecipe] = useState(true);
+  const [recomendacoes, setRecomendacoes] = useState([]);
 
   const stateDefault = {
     mealsFilter,
@@ -28,11 +29,17 @@ function AppProvider({ children }) {
     setSearchBar,
     detailsPage,
     setDetailsPage,
+<<<<<<< HEAD
     disabledButtonPrograss,
     setDisabledButtonPrograss,
     endRecipe,
     setEndRecipe,
+=======
+    recomendacoes,
+    setRecomendacoes,
+>>>>>>> e62ddd121799745fc4116cd4629c1241030b9868
   };
+
   return (
     <AppContext.Provider value={ stateDefault }>
       { children }
