@@ -22,7 +22,6 @@ class Switcher extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/explorar/bebidas/area" component={ NotFound } />
         <Route
           path="/explorar/comidas/ingredientes"
           component={ FoodsByIngredients }
@@ -31,6 +30,7 @@ class Switcher extends Component {
           path="/explorar/bebidas/ingredientes"
           component={ DrinksByIngredients }
         />
+        <Route exact path="/explorar/bebidas/area" component={ NotFound } />
         <Route path="/explorar/comidas/area" component={ FoodsByOrigin } />
         <Route path="/comidas/:id/in-progress" component={ FoodProgress } />
         <Route path="/bebidas/:id/in-progress" component={ DrinkProgress } />
