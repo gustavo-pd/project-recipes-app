@@ -29,15 +29,12 @@ function AppProvider({ children }) {
     setSearchBar,
     detailsPage,
     setDetailsPage,
-<<<<<<< HEAD
     disabledButtonPrograss,
     setDisabledButtonPrograss,
     endRecipe,
     setEndRecipe,
-=======
     recomendacoes,
     setRecomendacoes,
->>>>>>> e62ddd121799745fc4116cd4629c1241030b9868
   };
 
   return (
