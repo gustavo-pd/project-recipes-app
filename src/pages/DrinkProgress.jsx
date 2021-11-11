@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router';
 import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Ingredients from '../components/details recipes/Ingredients';
 import Instructions from '../components/details recipes/Instructions';
 import AppContext from '../context/AppContext';
-import { useHistory } from 'react-router';
 
 function DrinkProgress(props) {
   const history = useHistory();
