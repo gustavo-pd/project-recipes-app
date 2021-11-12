@@ -10,6 +10,8 @@ function AppProvider({ children }) {
   const [drinksFilter, setDrinksFilter] = useState([]);
   const [searchBar, setSearchBar] = useState(false);
   const [detailsPage, setDetailsPage] = useState([]);
+  const [disabledButtonPrograss, setDisabledButtonPrograss] = useState(true);
+  const [endRecipe, setEndRecipe] = useState(true);
   const [recomendacoes, setRecomendacoes] = useState([]);
 
   const stateDefault = {
@@ -27,6 +29,10 @@ function AppProvider({ children }) {
     setSearchBar,
     detailsPage,
     setDetailsPage,
+    disabledButtonPrograss,
+    setDisabledButtonPrograss,
+    endRecipe,
+    setEndRecipe,
     recomendacoes,
     setRecomendacoes,
   };
