@@ -109,3 +109,14 @@ export function isCheckedDrink(id, string) {
     return bool;
   }
 }
+
+export function saveFavoriteInLocalStorage(param) {
+  if (!JSON.parse(localStorage.getItem('favoriteRecipes'))) {
+    localStorage.setItem('favoriteRecipes', JSON.stringify([]));
+  }
+  const storage = JSON.parse(localStorage.getItem('favoriteRecipes'));
+  const filterStorage = storage.filter((obj) => obj.id !== param.id);
+  const newFavorites = [...filterStorage, param];
+  const save = filterStorage.length < storage.length ? filterStorage : newFavorites;
+  localStorage.setItem('favoriteRecipes', JSON.stringify(save));
+}
