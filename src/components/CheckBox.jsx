@@ -10,7 +10,6 @@ function CheckBox({ boolean = false, setChecked, checked, saveStorage, isChecked
     saveStorage(target.checked);
     setDisabledButtonPrograss(!disabledButtonPrograss);
   }
-
   return boolean && (
     <input
       type="checkbox"
