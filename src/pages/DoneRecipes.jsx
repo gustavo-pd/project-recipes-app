@@ -35,7 +35,7 @@ function DoneRecipes() {
   return (
     <>
       <main>
-        <Header title="Receitas Favoritas" bool={ false } />
+        <Header title="Receitas Feitas" bool={ false } />
         <FilterButton name="All" id="filter-by-all-btn" onClick={ handleFilter } />
         <FilterButton name="Food" id="filter-by-food-btn" onClick={ handleFilter } />
         <FilterButton name="Drinks" id="filter-by-drink-btn" onClick={ handleFilter } />
