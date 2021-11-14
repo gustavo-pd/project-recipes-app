@@ -7,7 +7,7 @@ function CardDoneRecipe({ recipe, index }) {
   const { id, type } = recipe;
   const url = `/${type}s/${id}`;
   const { tags } = recipe;
-  const tagsRecipes = (tags.toString().split(',')) ? tags.toString().split(',') : [];
+  const tagsRecipes = (tags || tags.toString().split(',')) ? tags.toString().split(',') : [];
 
   return (
     <div>
