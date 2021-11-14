@@ -47,7 +47,6 @@ function HeaderRecipes({ type }) {
         data-testid="recipe-photo"
       />
       <h1 data-testid="recipe-title">{detailsPage[title]}</h1>
-      { linkCopy && 'Link copiado!'}
       <ShareIcon type={ type } />
       <FavoriteIcon type={ type } favorite={ favorite } setFavorite={ setFavorite } />
       <p data-testid="recipe-category">{strCategory}</p>

@@ -48,7 +48,7 @@ function FavoriteRecipeCard({ recipe, index }) {
       >
         Share
       </button> */}
-      <ShareIcon type={ recipe.type } recipe={ recipe } />
+      <ShareIcon type={ recipe.type } index={ index } recipe={ recipe } />
     </div>
   );
 }

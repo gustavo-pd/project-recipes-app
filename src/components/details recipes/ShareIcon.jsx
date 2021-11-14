@@ -4,7 +4,7 @@ import AppContext from '../../context/AppContext';
 
 const copy = require('clipboard-copy');
 
-function ShareIcon({ type, recipe = {} }) {
+function ShareIcon({ type, recipe = {}, index = '' }) {
   const [linkCopy, setLinlCopy] = useState(false);
   const { detailsPage } = useContext(AppContext);
 
@@ -40,7 +40,7 @@ function ShareIcon({ type, recipe = {} }) {
       <button
         onClick={ handleShare }
         type="button"
-        data-testid="share-btn"
+        data-testid={ (index !== '') ? `${index}-horizontal-share-btn` : 'share-btn' }
       >
         share
       </button>
@@ -51,6 +51,9 @@ function ShareIcon({ type, recipe = {} }) {
 ShareIcon.propTypes = {
   type: PropTypes.string.isRequired,
   recipe: PropTypes.objectOf(PropTypes.any).isRequired,
+  index: PropTypes.number,
 };
+
+ShareIcon.defaultProps = { index: '' };
 
 export default ShareIcon;
