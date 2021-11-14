@@ -13,6 +13,8 @@ function AppProvider({ children }) {
   const [disabledButtonPrograss, setDisabledButtonPrograss] = useState(true);
   const [endRecipe, setEndRecipe] = useState(true);
   const [recomendacoes, setRecomendacoes] = useState([]);
+  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+  const [favoriteIcon, setFavoriteIcon] = useState(true);
 
   const stateDefault = {
     mealsFilter,
@@ -35,6 +37,10 @@ function AppProvider({ children }) {
     setEndRecipe,
     recomendacoes,
     setRecomendacoes,
+    favoriteRecipes,
+    setFavoriteRecipes,
+    favoriteIcon,
+    setFavoriteIcon,
   };
 
   return (
