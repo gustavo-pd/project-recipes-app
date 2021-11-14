@@ -87,7 +87,7 @@ export function isCheckedMeal(id, string) {
   }
 
   if (saveObj.meals[id]) {
-    const filterIngredients = saveObj.meals[id];
+    const filterIngredients = (saveObj.meals[id]) ? saveObj.meals[id] : [];
     const bool = filterIngredients.some((ingredient) => ingredient === string);
     return bool;
   }
@@ -104,7 +104,7 @@ export function isCheckedDrink(id, string) {
   }
 
   if (saveObj.cocktails[id]) {
-    const filterIngredients = saveObj.cocktails[id];
+    const filterIngredients = (saveObj.cocktails[id]) ? saveObj.cocktails[id] : [];
     const bool = filterIngredients.some((ingredient) => ingredient === string);
     return bool;
   }
