@@ -35,7 +35,9 @@ CardRecipe.propTypes = {
   index: PropTypes.number.isRequired,
   page: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  bool: PropTypes.bool.isRequired,
+  bool: PropTypes.bool,
 };
+
+CardRecipe.defaultProps = { bool: false };
 
 export default CardRecipe;
