@@ -7,7 +7,7 @@ function CardDoneRecipe({ recipe, index }) {
   const { id, type } = recipe;
   const url = `/${type}s/${id}`;
   const { tags } = recipe;
-  const tagsRecipes = (tags || tags.toString().split(',')) ? tags.toString().split(',') : [];
+  const tagsReci = (tags || tags.toString().split(',')) ? tags.toString().split(',') : [];
 
   return (
     <div>
@@ -32,7 +32,7 @@ function CardDoneRecipe({ recipe, index }) {
         <p data-testid={ `${index}-horizontal-name` }>{recipe.name}</p>
         <p data-testid={ `${index}-horizontal-done-date` }>{ recipe.doneDate }</p>
 
-        { tagsRecipes.map((tag) => (
+        { tagsReci.map((tag) => (
           <p
             data-testid={ `${index}-${tag}-horizontal-tag` }
             key={ tag }
