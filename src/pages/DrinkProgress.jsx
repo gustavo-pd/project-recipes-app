@@ -36,7 +36,7 @@ function DrinkProgress(props) {
       name: detailsPage[title],
       image: detailsPage[image],
       doneDate: `${dia}/${mes}/${ano}`,
-      tags: detailsPage.strTags,
+      tags: (!detailsPage.strTags) ? [] : detailsPage.strTags,
     };
 
     saveDoneRecipeInLocalStorage(saveDoneRecipe);
