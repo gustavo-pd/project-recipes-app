@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import FavoriteIcon from './details recipes/FavoriteIcon';
 import ShareIcon from './details recipes/ShareIcon';
 
@@ -8,15 +9,19 @@ import ShareIcon from './details recipes/ShareIcon';
 
 function FavoriteRecipeCard({ recipe, index }) {
   const [favorite, setFavorite] = useState(true);
+  const { id, type } = recipe;
+  const url = `/${type}s/${id}`;
 
   return (
     <div>
-      <img
-        src={ recipe.image }
-        alt={ recipe.name }
-        width="100px"
-        data-testid={ `${index}-horizontal-image` }
-      />
+      <Link to={ url }>
+        <img
+          src={ recipe.image }
+          alt={ recipe.name }
+          width="100px"
+          data-testid={ `${index}-horizontal-image` }
+        />
+      </Link>
       <p data-testid={ `${index}-horizontal-name` }>{recipe.name}</p>
 
       {recipe.alcoholicOrNot
