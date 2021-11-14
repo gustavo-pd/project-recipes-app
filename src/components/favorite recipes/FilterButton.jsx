@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function FilterButton({ name, id, onClick }) {
   return (
@@ -13,5 +14,11 @@ function FilterButton({ name, id, onClick }) {
     </button>
   );
 }
+
+FilterButton.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default FilterButton;
