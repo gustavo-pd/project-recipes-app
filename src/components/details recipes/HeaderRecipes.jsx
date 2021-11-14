@@ -16,15 +16,6 @@ function HeaderRecipes({ type }) {
   const title = `str${type}`;
   const id = `id${type}`;
 
-  // function handleShare() {
-  //   const url = `http://localhost:3000/${page}/${detailsPage[id]}`;
-  //   copy(url);
-  //   setLinlCopy(true);
-  //   setTimeout(() => {
-  //     setLinlCopy(false);
-  //   }, TRES_SEGUNDOS);
-  // }
-
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem('favoriteRecipes'))) {
       localStorage.setItem('favoriteRecipes', JSON.stringify([]));

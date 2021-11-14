@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import AppContext from '../../context/AppContext';
+import shareIcon from '../../images/shareIcon.svg';
 
 const copy = require('clipboard-copy');
 
@@ -9,10 +10,12 @@ function ShareIcon({ type, recipe = {}, index = '' }) {
   const { detailsPage } = useContext(AppContext);
 
   const page = () => {
-    if (type === 'Meal' || type === 'Drink') {
-      return (type === 'Meal') ? 'comidas' : 'bebidas';
+    if (type === 'Meal' || type === 'comida') {
+      return 'comidas';
     }
-    return type;
+    if (type === 'Drink' || type === 'bebida') {
+      return 'bebidas';
+    }
   };
 
   const recipeId = () => {
@@ -40,9 +43,10 @@ function ShareIcon({ type, recipe = {}, index = '' }) {
       <button
         onClick={ handleShare }
         type="button"
+        src={ shareIcon }
         data-testid={ (index !== '') ? `${index}-horizontal-share-btn` : 'share-btn' }
       >
-        share
+        <img src={ shareIcon } alt="Compartilhar" />
       </button>
     </div>
   );

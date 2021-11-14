@@ -14,6 +14,7 @@ function AppProvider({ children }) {
   const [endRecipe, setEndRecipe] = useState(true);
   const [recomendacoes, setRecomendacoes] = useState([]);
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+  const [favoriteIcon, setFavoriteIcon] = useState(true);
 
   const stateDefault = {
     mealsFilter,
@@ -38,6 +39,8 @@ function AppProvider({ children }) {
     setRecomendacoes,
     favoriteRecipes,
     setFavoriteRecipes,
+    favoriteIcon,
+    setFavoriteIcon,
   };
 
   return (

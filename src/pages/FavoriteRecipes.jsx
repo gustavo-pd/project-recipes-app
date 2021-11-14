@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import FavoriteRecipeCard from '../components/FavoriteRecipeCard';
 import FilterButton from '../components/favorite recipes/FilterButton';
+import useLocalStorageToUpdateRecipes from '../hooks/useLocalStorageToUpdateRecipes';
 
 function FavoriteRecipes() {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
@@ -17,6 +18,8 @@ function FavoriteRecipes() {
       await setFavoriteRecipes([...storage]);
     })();
   }, []);
+
+  useLocalStorageToUpdateRecipes(setFilterRecipes, setFavoriteRecipes);
 
   const handleFilter = ({ target: { name } }) => {
     if (name === 'Food') {

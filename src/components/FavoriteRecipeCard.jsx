@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import FavoriteIcon from './details recipes/FavoriteIcon';
 import ShareIcon from './details recipes/ShareIcon';
 
-// import blackHeartIcon from '../images/blackHeartIcon.svg';
-// import whiteHeartIcon from '../images/whiteHeartIcon.svg';
-
 function FavoriteRecipeCard({ recipe, index }) {
   const [favorite, setFavorite] = useState(true);
   const { id, type } = recipe;
@@ -21,38 +18,31 @@ function FavoriteRecipeCard({ recipe, index }) {
           width="100px"
           data-testid={ `${index}-horizontal-image` }
         />
+        <p data-testid={ `${index}-horizontal-name` }>{recipe.name}</p>
+
+        {recipe.alcoholicOrNot
+          ? (
+            <p
+              data-testid={ `${index}-horizontal-top-text` }
+            >
+              {recipe.alcoholicOrNot}
+            </p>)
+          : (
+            <p data-testid={ `${index}-horizontal-top-text` }>
+              {`${recipe.area} - ${recipe.category}`}
+              {' '}
+            </p>)}
+
+        <p>{recipe.area}</p>
       </Link>
-      <p data-testid={ `${index}-horizontal-name` }>{recipe.name}</p>
 
-      {recipe.alcoholicOrNot
-        ? (
-          <p
-            data-testid={ `${index}-horizontal-top-text` }
-          >
-            {recipe.alcoholicOrNot}
-          </p>)
-        : (
-          <p data-testid={ `${index}-horizontal-top-text` }>
-            {recipe.category}
-            {' '}
-          </p>)}
-
-      <p>{recipe.area}</p>
-      {/* <button type="button" onClick={ handleFavorite }>
-        <img src={ favorite ? blackHeartIcon : whiteHeartIcon } alt="" />
-      </button> */}
       <FavoriteIcon
+        index={ index }
         type={ recipe.type }
         favorite={ favorite }
         setFavorite={ setFavorite }
         recipe={ recipe }
       />
-      {/* <button
-        type="button"
-        data-testid={ `${index}-horizontal-share-btn` }
-      >
-        Share
-      </button> */}
       <ShareIcon type={ recipe.type } index={ index } recipe={ recipe } />
     </div>
   );

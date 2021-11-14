@@ -5,14 +5,15 @@ import blackHeartIcon from '../../images/blackHeartIcon.svg';
 import whiteHeartIcon from '../../images/whiteHeartIcon.svg';
 import AppContext from '../../context/AppContext';
 
-function FavoriteIcon({ type, favorite, setFavorite, recipe = {} }) {
-  const { detailsPage } = useContext(AppContext);
+function FavoriteIcon({ type, favorite, setFavorite, recipe = {}, index = '' }) {
+  const { detailsPage, favoriteIcon, setFavoriteIcon } = useContext(AppContext);
 
   const id = `id${type}`;
   const image = `str${type}Thumb`;
   const title = `str${type}`;
 
   function handleFavorite() {
+    setFavoriteIcon(!favoriteIcon);
     if (type === 'Meal' || type === 'Drink') {
       setFavorite(!favorite);
       const saveRecipe = {
@@ -24,27 +25,18 @@ function FavoriteIcon({ type, favorite, setFavorite, recipe = {} }) {
         name: detailsPage[title],
         image: detailsPage[image],
       };
-      saveFavoriteInLocalStorage(saveRecipe);
-    } else {
-      setFavorite(!favorite);
-      const saveRecipe = {
-        id: recipe.id,
-        type: recipe.type,
-        area: recipe.area,
-        category: recipe.category,
-        alcoholicOrNot: recipe.alcoholicOrNot,
-        name: recipe.name,
-        image: recipe.image,
-      };
-      saveFavoriteInLocalStorage(saveRecipe);
+      return saveFavoriteInLocalStorage(saveRecipe);
     }
+    setFavorite(!favorite);
+    saveFavoriteInLocalStorage(recipe);
   }
 
   return (
     <div>
       <button
         type="button"
-        data-testid="favorite-btn"
+        data-testid={ (index !== '') ? `${index}-horizontal-favorite-btn`
+          : 'favorite-btn' }
         onClick={ handleFavorite }
         src={ favorite ? blackHeartIcon : whiteHeartIcon }
       >
@@ -58,7 +50,13 @@ FavoriteIcon.propTypes = {
   type: PropTypes.string.isRequired,
   favorite: PropTypes.bool.isRequired,
   setFavorite: PropTypes.func.isRequired,
-  recipe: PropTypes.objectOf(PropTypes.any).isRequired,
+  index: PropTypes.number,
+  recipe: PropTypes.objectOf(PropTypes.any),
+};
+
+FavoriteIcon.defaultProps = {
+  recipe: {},
+  index: '',
 };
 
 export default FavoriteIcon;
