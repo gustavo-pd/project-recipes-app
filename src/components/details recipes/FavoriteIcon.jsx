@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { saveFavoriteInLocalStorage } from '../../services/saveInProgressRecipes';
 import blackHeartIcon from '../../images/blackHeartIcon.svg';
 import whiteHeartIcon from '../../images/whiteHeartIcon.svg';
 import AppContext from '../../context/AppContext';
 
-function FavoriteIcon({ type, favorite, setFavorite }) {
+function FavoriteIcon({ type, favorite, setFavorite, recipe = {} }) {
   const { detailsPage } = useContext(AppContext);
 
   const id = `id${type}`;
@@ -13,17 +13,31 @@ function FavoriteIcon({ type, favorite, setFavorite }) {
   const title = `str${type}`;
 
   function handleFavorite() {
-    setFavorite(!favorite);
-    const saveRecipe = {
-      id: detailsPage[id],
-      type: (type === 'Meal') ? 'comida' : 'bebida',
-      area: (type === 'Meal') ? detailsPage.strArea : '',
-      category: detailsPage.strCategory,
-      alcoholicOrNot: (type === 'Meal') ? '' : detailsPage.strAlcoholic,
-      name: detailsPage[title],
-      image: detailsPage[image],
-    };
-    saveFavoriteInLocalStorage(saveRecipe);
+    if (type === 'Meal' || type === 'Drink') {
+      setFavorite(!favorite);
+      const saveRecipe = {
+        id: detailsPage[id],
+        type: (type === 'Meal') ? 'comida' : 'bebida',
+        area: (type === 'Meal') ? detailsPage.strArea : '',
+        category: detailsPage.strCategory,
+        alcoholicOrNot: (type === 'Meal') ? '' : detailsPage.strAlcoholic,
+        name: detailsPage[title],
+        image: detailsPage[image],
+      };
+      saveFavoriteInLocalStorage(saveRecipe);
+    } else {
+      setFavorite(!favorite);
+      const saveRecipe = {
+        id: recipe.id,
+        type: recipe.type,
+        area: recipe.area,
+        category: recipe.category,
+        alcoholicOrNot: recipe.alcoholicOrNot,
+        name: recipe.name,
+        image: recipe.image,
+      };
+      saveFavoriteInLocalStorage(saveRecipe);
+    }
   }
 
   return (
@@ -42,6 +56,9 @@ function FavoriteIcon({ type, favorite, setFavorite }) {
 
 FavoriteIcon.propTypes = {
   type: PropTypes.string.isRequired,
+  favorite: PropTypes.bool.isRequired,
+  setFavorite: PropTypes.func.isRequired,
+  recipe: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default FavoriteIcon;
