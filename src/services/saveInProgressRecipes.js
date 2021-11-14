@@ -120,3 +120,14 @@ export function saveFavoriteInLocalStorage(param) {
   const save = filterStorage.length < storage.length ? filterStorage : newFavorites;
   localStorage.setItem('favoriteRecipes', JSON.stringify(save));
 }
+
+export function saveDoneRecipeInLocalStorage(param) {
+  if (!JSON.parse(localStorage.getItem('doneRecipes'))) {
+    localStorage.setItem('doneRecipes', JSON.stringify([]));
+  }
+  const storage = JSON.parse(localStorage.getItem('doneRecipes'));
+  const filterStorage = storage.filter((obj) => obj.id !== param.id);
+  const newFavorites = [...filterStorage, param];
+  const save = filterStorage.length < storage.length ? filterStorage : newFavorites;
+  localStorage.setItem('doneRecipes', JSON.stringify(save));
+}
