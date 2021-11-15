@@ -24,7 +24,6 @@ function Ingredients({ recipe, boolean = false, id, type }) {
     igredientes = [...igredientes, `${produtos[index]} - ${string}`];
   });
 
-
   function buttonDisabled() {
     const cocktails = 'cocktails';
     const key = type === 'meals' ? type : cocktails;
