@@ -15,7 +15,6 @@ function DrinkDetails() {
   // const drinkURL = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
   // const drinks = 'drinks';
   // useFetchRecipeDetails(drinkURL, drinks);
-
   // const recommendationsURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
   // useFetchRecomendacoes(recommendationsURL, drinks);
 
