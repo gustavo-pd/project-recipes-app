@@ -15,15 +15,26 @@ function DrinkDetails(props) {
   const drinks = 'drinks';
   useFetchRecipeDetails(drinkURL, drinks);
 
-  const recommendationsURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
-  useFetchRecomendacoes(recommendationsURL, drinks);
+  const recommendationsURL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+  useFetchRecomendacoes(recommendationsURL, 'meals');
 
   return (
     <main>
       <HeaderRecipes type="Drink" bool />
       <Instructions />
       <Ingredients recipe={ detailsPage } />
-      {recomendacoes.map((drink, index) => (
+      {recomendacoes.map((meal, index) => (
+        <CardRecipe
+          page="comidas"
+          id={ meal.idMeal }
+          key={ index }
+          type="Meal"
+          recipe={ meal }
+          index={ index }
+          bool
+        />
+      ))}
+      {/* {recomendacoes.map((drink, index) => (
         <CardRecipe
           page="bebidas"
           id={ drink.idDrink }
@@ -33,7 +44,7 @@ function DrinkDetails(props) {
           index={ index }
           bool
         />
-      ))}
+      ))} */}
       <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
     </main>
   );
