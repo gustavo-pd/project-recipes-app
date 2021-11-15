@@ -36,7 +36,6 @@ function DrinkDetails(props) {
           bool
         />
       ))}
-      {/* <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button> */}
     </main>
   );
 }

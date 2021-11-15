@@ -25,7 +25,8 @@ function ButtonDetails({ id, type }) {
       return setRecipeInProgress(bool);
     }
     if (type === 'drinks') {
-      const bool = Object.keys(storage.cocktails).some((idCocktails) => idCocktails === id);
+      const bool = Object.keys(storage.cocktails).some((idCocktails) => (
+        idCocktails === id));
       return setRecipeInProgress(bool);
     }
   }
@@ -46,5 +47,10 @@ function ButtonDetails({ id, type }) {
     </div>
   );
 }
+
+ButtonDetails.propTypes = {
+  id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+};
 
 export default ButtonDetails;
