@@ -50,6 +50,9 @@ function HeaderRecipes({ type, bool = false }) {
 
 HeaderRecipes.propTypes = {
   type: PropTypes.string.isRequired,
+  bool: PropTypes.bool,
 };
+
+HeaderRecipes.defaultProps = { bool: false };
 
 export default HeaderRecipes;
