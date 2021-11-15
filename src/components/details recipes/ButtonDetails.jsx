@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function ButtonDetails({ id, type }) {
   const [doneRecipe, setDoneRecipe] = useState(true);
@@ -35,15 +36,20 @@ function ButtonDetails({ id, type }) {
     checkProgressRecipe();
   }, []);
 
+  const page = (type === 'meals') ? 'comidas' : 'bebidas';
+
   return (
     <div>
       { doneRecipe && (
-        <button
-          type="button"
-          data-testid="start-recipe-btn"
-        >
-          { recipeInProgress ? 'Continuar Receita' : 'Iniciar Receita'}
-        </button>)}
+        <Link to={ `/${page}/${id}/in-progress` }>
+          <button
+            type="button"
+            data-testid="start-recipe-btn"
+          >
+            { recipeInProgress ? 'Continuar Receita' : 'Iniciar Receita'}
+          </button>
+        </Link>
+      )}
     </div>
   );
 }
