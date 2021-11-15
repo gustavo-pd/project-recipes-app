@@ -16,8 +16,8 @@ function FoodDetails(props) {
   const meals = 'meals';
   useFetchRecipeDetails(foodURL, meals);
 
-  const recommendationsURL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
-  useFetchRecomendacoes(recommendationsURL, meals);
+  const recommendationsURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
+  useFetchRecomendacoes(recommendationsURL, 'drinks');
 
   return (
     <main>
@@ -37,13 +37,13 @@ function FoodDetails(props) {
           src={ strYoutube }
         />
       </video>
-      {recomendacoes.map((meal, index) => (
+      {recomendacoes.map((drink, index) => (
         <CardRecipe
-          page="comidas"
-          id={ meal.idMeal }
+          page="bebidas"
+          id={ drink.idDrink }
           key={ index }
-          type="Meal"
-          recipe={ meal }
+          type="Drink"
+          recipe={ drink }
           index={ index }
           bool
         />

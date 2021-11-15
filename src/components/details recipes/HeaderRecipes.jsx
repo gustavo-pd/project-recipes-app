@@ -6,10 +6,10 @@ import ShareIcon from './ShareIcon';
 
 // const copy = require('clipboard-copy');
 
-function HeaderRecipes({ type }) {
+function HeaderRecipes({ type, bool = false }) {
   const [favorite, setFavorite] = useState(false);
   const { detailsPage, setFavoriteRecipes } = useContext(AppContext);
-  const { strCategory } = detailsPage;
+  const { strCategory, strAlcoholic } = detailsPage;
 
   // const page = (type === 'Meal') ? 'comidas' : 'bebidas';
   const image = `str${type}Thumb`;
@@ -40,13 +40,19 @@ function HeaderRecipes({ type }) {
       <h1 data-testid="recipe-title">{detailsPage[title]}</h1>
       <ShareIcon type={ type } />
       <FavoriteIcon type={ type } favorite={ favorite } setFavorite={ setFavorite } />
-      <p data-testid="recipe-category">{strCategory}</p>
+      {(bool
+        ? <p data-testid="recipe-category">{strAlcoholic}</p>
+        : <p data-testid="recipe-category">{strCategory}</p>
+      )}
     </header>
   );
 }
 
 HeaderRecipes.propTypes = {
   type: PropTypes.string.isRequired,
+  bool: PropTypes.bool,
 };
+
+HeaderRecipes.defaultProps = { bool: false };
 
 export default HeaderRecipes;

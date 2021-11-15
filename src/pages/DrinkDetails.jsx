@@ -15,21 +15,21 @@ function DrinkDetails(props) {
   const drinks = 'drinks';
   useFetchRecipeDetails(drinkURL, drinks);
 
-  const recommendationsURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
-  useFetchRecomendacoes(recommendationsURL, drinks);
+  const recommendationsURL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+  useFetchRecomendacoes(recommendationsURL, 'meals');
 
   return (
     <main>
-      <HeaderRecipes type="Drink" />
+      <HeaderRecipes type="Drink" bool />
       <Instructions />
       <Ingredients recipe={ detailsPage } />
-      {recomendacoes.map((drink, index) => (
+      {recomendacoes.map((meal, index) => (
         <CardRecipe
-          page="bebidas"
-          id={ drink.idDrink }
+          page="comidas"
+          id={ meal.idMeal }
           key={ index }
-          type="Drink"
-          recipe={ drink }
+          type="Meal"
+          recipe={ meal }
           index={ index }
           bool
         />
