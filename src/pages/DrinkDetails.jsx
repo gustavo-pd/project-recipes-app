@@ -21,7 +21,7 @@ function DrinkDetails(props) {
   return (
     <main>
       <HeaderRecipes type="Drink" />
-      <Instructions />
+      {/* <Instructions />
       <Ingredients recipe={ detailsPage } />
       {recomendacoes.map((drink, index) => (
         <CardRecipe
@@ -34,7 +34,7 @@ function DrinkDetails(props) {
           bool
         />
       ))}
-      <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
+      <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button> */}
     </main>
   );
 }
