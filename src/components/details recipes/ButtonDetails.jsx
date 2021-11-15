@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './css/ButtonDetails.css';
 
 function ButtonDetails({ id, type }) {
   const [doneRecipe, setDoneRecipe] = useState(true);
@@ -45,6 +46,7 @@ function ButtonDetails({ id, type }) {
           <button
             type="button"
             data-testid="start-recipe-btn"
+            className="buttonStart"
           >
             { recipeInProgress ? 'Continuar Receita' : 'Iniciar Receita'}
           </button>
