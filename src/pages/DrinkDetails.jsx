@@ -23,7 +23,7 @@ function DrinkDetails(props) {
     <main>
       <HeaderRecipes type="Drink" bool />
       <Instructions />
-      <Ingredients recipe={ detailsPage } />
+      <Ingredients recipe={ detailsPage } id={ id } type={ drinks } />
       <ButtonDetails id={ id } type={ drinks } />
       {recomendacoes.map((meal, index) => (
         <CardRecipe
