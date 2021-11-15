@@ -1,6 +1,6 @@
 import React from 'react';
 // import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 // import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 // import useFetchRecomendacoes from '../hooks/useFetchRecomendacoes';
@@ -39,8 +39,8 @@ function DrinkDetails() {
   );
 }
 
-DrinkDetails.propTypes = {
-  match: PropTypes.objectOf(PropTypes.any).isRequired,
-};
+// DrinkDetails.propTypes = {
+//   match: PropTypes.objectOf(PropTypes.any).isRequired,
+// };
 
 export default DrinkDetails;
