@@ -7,6 +7,7 @@ import Instructions from '../components/details recipes/Instructions';
 import Ingredients from '../components/details recipes/Ingredients';
 import CardRecipe from '../components/CardRecipe';
 import AppContext from '../context/AppContext';
+import ButtonDetails from '../components/details recipes/ButtonDetails';
 
 function DrinkDetails(props) {
   const { detailsPage, recomendacoes } = useContext(AppContext);
@@ -23,6 +24,7 @@ function DrinkDetails(props) {
       <HeaderRecipes type="Drink" bool />
       <Instructions />
       <Ingredients recipe={ detailsPage } />
+      <ButtonDetails id={ id } type={ drinks } />
       {recomendacoes.map((meal, index) => (
         <CardRecipe
           page="comidas"
@@ -34,7 +36,7 @@ function DrinkDetails(props) {
           bool
         />
       ))}
-      <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
+      {/* <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button> */}
     </main>
   );
 }

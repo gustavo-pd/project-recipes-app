@@ -7,10 +7,10 @@ import Instructions from '../components/details recipes/Instructions';
 import Ingredients from '../components/details recipes/Ingredients';
 import CardRecipe from '../components/CardRecipe';
 import AppContext from '../context/AppContext';
+import ButtonDetails from '../components/details recipes/ButtonDetails';
 
 function FoodDetails(props) {
   const { detailsPage, recomendacoes } = useContext(AppContext);
-  const { strYoutube } = detailsPage;
   const { match: { params: { id } } } = props;
   const foodURL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const meals = 'meals';
@@ -24,19 +24,7 @@ function FoodDetails(props) {
       <HeaderRecipes type="Meal" />
       <Instructions />
       <Ingredients recipe={ detailsPage } />
-      <video
-        width="320"
-        height="240"
-        data-testid="video"
-        src={ strYoutube }
-      >
-        <track
-          default
-          kind="captions"
-          srcLang="en"
-          src={ strYoutube }
-        />
-      </video>
+      <ButtonDetails id={ id } type={ meals } />
       {recomendacoes.map((drink, index) => (
         <CardRecipe
           page="bebidas"
@@ -48,7 +36,7 @@ function FoodDetails(props) {
           bool
         />
       ))}
-      <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
+      {/* <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button> */}
     </main>
   );
 }
