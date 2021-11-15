@@ -8,12 +8,24 @@ function Ingredients({ recipe, boolean = false, id, type }) {
   const arrayRecipe = recipe;
   const keys = Object.keys(arrayRecipe);
   const values = Object.values(arrayRecipe);
+  let produtos = [];
+  let quantidade = [];
   let igredientes = [];
   keys.forEach((key, index) => {
+    if (key.includes('strMeasure') && values[index]) {
+      quantidade = [...quantidade, values[index]];
+    }
     if (key.includes('strIngredient') && values[index]) {
-      igredientes = [...igredientes, values[index]];
+      produtos = [...produtos, values[index]];
     }
   });
+
+  quantidade.forEach((string, index) => {
+    igredientes = [...igredientes, `${produtos[index]} - ${string}`];
+  });
+
+  console.log(produtos);
+  console.log(quantidade);
 
   function buttonDisabled() {
     const cocktails = 'cocktails';
@@ -42,6 +54,7 @@ function Ingredients({ recipe, boolean = false, id, type }) {
 
   return (
     <main>
+      {console.log(igredientes)}
       <h3>Ingredients</h3>
       <ol>
         { igredientes.map((string, index) => (
