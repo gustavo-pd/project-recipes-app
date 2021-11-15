@@ -10,7 +10,11 @@ function AppProvider({ children }) {
   const [drinksFilter, setDrinksFilter] = useState([]);
   const [searchBar, setSearchBar] = useState(false);
   const [detailsPage, setDetailsPage] = useState([]);
+  const [disabledButtonPrograss, setDisabledButtonPrograss] = useState(true);
+  const [endRecipe, setEndRecipe] = useState(true);
   const [recomendacoes, setRecomendacoes] = useState([]);
+  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+  const [favoriteIcon, setFavoriteIcon] = useState(true);
 
   const stateDefault = {
     mealsFilter,
@@ -27,8 +31,16 @@ function AppProvider({ children }) {
     setSearchBar,
     detailsPage,
     setDetailsPage,
+    disabledButtonPrograss,
+    setDisabledButtonPrograss,
+    endRecipe,
+    setEndRecipe,
     recomendacoes,
     setRecomendacoes,
+    favoriteRecipes,
+    setFavoriteRecipes,
+    favoriteIcon,
+    setFavoriteIcon,
   };
 
   return (

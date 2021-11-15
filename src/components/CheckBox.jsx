@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import AppContext from '../context/AppContext';
 
 function CheckBox({ boolean = false, setChecked, checked, saveStorage, isChecked }) {
+  const { setDisabledButtonPrograss, disabledButtonPrograss } = useContext(AppContext);
+
   function handleChange({ target }) {
     setChecked(!checked);
     saveStorage(target.checked);
+    setDisabledButtonPrograss(!disabledButtonPrograss);
   }
-
   return boolean && (
     <input
       type="checkbox"
