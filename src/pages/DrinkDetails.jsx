@@ -34,17 +34,6 @@ function DrinkDetails(props) {
           bool
         />
       ))}
-      {/* {recomendacoes.map((drink, index) => (
-        <CardRecipe
-          page="bebidas"
-          id={ drink.idDrink }
-          key={ index }
-          type="Drink"
-          recipe={ drink }
-          index={ index }
-          bool
-        />
-      ))} */}
       <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
     </main>
   );
