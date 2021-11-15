@@ -6,6 +6,7 @@ import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Ingredients from '../components/details recipes/Ingredients';
 import Instructions from '../components/details recipes/Instructions';
 import AppContext from '../context/AppContext';
+import { saveDoneRecipeInLocalStorage } from '../services/saveInProgressRecipes';
 
 function FoodProgress(props) {
   const history = useHistory();
@@ -13,9 +14,32 @@ function FoodProgress(props) {
   const { match: { params: { id } } } = props;
   const foodURL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const meals = 'meals';
+  const type = 'Meal';
+
   useFetchRecipeDetails(foodURL, meals);
 
+  const idRecipe = `id${type}`;
+  const image = `str${type}Thumb`;
+  const title = `str${type}`;
+  const data = new Date();
+  const dia = data.getDate();
+  const mes = data.getMonth();
+  const ano = data.getFullYear();
+
   function handleClik() {
+    const saveDoneRecipe = {
+      id: detailsPage[idRecipe],
+      type: (type === 'Meal') ? 'comida' : 'bebida',
+      area: (type === 'Meal') ? detailsPage.strArea : '',
+      category: detailsPage.strCategory,
+      alcoholicOrNot: (type === 'Meal') ? '' : detailsPage.strAlcoholic,
+      name: detailsPage[title],
+      image: detailsPage[image],
+      doneDate: `${dia}/${mes}/${ano}`,
+      tags: detailsPage.strTags,
+    };
+
+    saveDoneRecipeInLocalStorage(saveDoneRecipe);
     history.push('/receitas-feitas');
   }
 

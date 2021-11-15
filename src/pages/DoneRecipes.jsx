@@ -1,49 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
-import FavoriteRecipeCard from '../components/FavoriteRecipeCard';
 import FilterButton from '../components/favorite recipes/FilterButton';
+import CardDoneRecipe from '../components/CardDoneRecipe';
 
 function DoneRecipes() {
-  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
-  const [filterRecipes, setFilterRecipes] = useState([...favoriteRecipes]);
+  const [doneRecipes, setDoneRecipes] = useState([]);
+  const [filterDoneRecipes, setFilterDoneRecipes] = useState([...doneRecipes]);
 
   useEffect(() => {
     (async () => {
-      if (!JSON.parse(localStorage.getItem('favoriteRecipes'))) {
-        return localStorage.setItem('favoriteRecipes', JSON.stringify(''));
+      if (!JSON.parse(localStorage.getItem('doneRecipes'))) {
+        return localStorage.setItem('doneRecipes', JSON.stringify(''));
       }
-      const storage = await JSON.parse(localStorage.getItem('favoriteRecipes'));
-      await setFilterRecipes([...storage]);
-      await setFavoriteRecipes([...storage]);
+      const storage = await JSON.parse(localStorage.getItem('doneRecipes'));
+      await setDoneRecipes([...storage]);
+      await setFilterDoneRecipes([...storage]);
     })();
   }, []);
 
   const handleFilter = ({ target: { name } }) => {
     if (name === 'Food') {
-      const filterByFood = favoriteRecipes.filter((recipe) => recipe.type === 'comida');
-      setFilterRecipes(filterByFood);
+      const filterByFood = doneRecipes.filter((recipe) => recipe.type === 'comida');
+      setFilterDoneRecipes(filterByFood);
     }
     if (name === 'Drinks') {
-      const filterByDrinks = favoriteRecipes.filter((recipe) => recipe.type === 'bebida');
-      setFilterRecipes(filterByDrinks);
+      const filterByDrinks = doneRecipes.filter((recipe) => recipe.type === 'bebida');
+      setFilterDoneRecipes(filterByDrinks);
     }
     if (name === 'All') {
-      setFilterRecipes(favoriteRecipes);
+      setFilterDoneRecipes(doneRecipes);
     }
   };
 
   return (
     <>
       <main>
-        <Header title="Receitas Favoritas" bool={ false } />
+        <Header title="Receitas Feitas" bool={ false } />
         <FilterButton name="All" id="filter-by-all-btn" onClick={ handleFilter } />
         <FilterButton name="Food" id="filter-by-food-btn" onClick={ handleFilter } />
         <FilterButton name="Drinks" id="filter-by-drink-btn" onClick={ handleFilter } />
       </main>
       <section>
-        {filterRecipes.map(
+        {filterDoneRecipes.map(
           (recipe, index) => (
-            <FavoriteRecipeCard key={ recipe.name } recipe={ recipe } index={ index } />
+            <CardDoneRecipe key={ recipe.name } recipe={ recipe } index={ index } />
           ),
         )}
       </section>

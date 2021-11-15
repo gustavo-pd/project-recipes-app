@@ -87,7 +87,7 @@ export function isCheckedMeal(id, string) {
   }
 
   if (saveObj.meals[id]) {
-    const filterIngredients = saveObj.meals[id];
+    const filterIngredients = (saveObj.meals[id]) ? saveObj.meals[id] : [];
     const bool = filterIngredients.some((ingredient) => ingredient === string);
     return bool;
   }
@@ -104,7 +104,7 @@ export function isCheckedDrink(id, string) {
   }
 
   if (saveObj.cocktails[id]) {
-    const filterIngredients = saveObj.cocktails[id];
+    const filterIngredients = (saveObj.cocktails[id]) ? saveObj.cocktails[id] : [];
     const bool = filterIngredients.some((ingredient) => ingredient === string);
     return bool;
   }
@@ -119,4 +119,15 @@ export function saveFavoriteInLocalStorage(param) {
   const newFavorites = [...filterStorage, param];
   const save = filterStorage.length < storage.length ? filterStorage : newFavorites;
   localStorage.setItem('favoriteRecipes', JSON.stringify(save));
+}
+
+export function saveDoneRecipeInLocalStorage(param) {
+  if (!JSON.parse(localStorage.getItem('doneRecipes'))) {
+    localStorage.setItem('doneRecipes', JSON.stringify([]));
+  }
+  const storage = JSON.parse(localStorage.getItem('doneRecipes'));
+  const filterStorage = storage.filter((obj) => obj.id !== param.id);
+  const newFavorites = [...filterStorage, param];
+  const save = filterStorage.length < storage.length ? filterStorage : newFavorites;
+  localStorage.setItem('doneRecipes', JSON.stringify(save));
 }
