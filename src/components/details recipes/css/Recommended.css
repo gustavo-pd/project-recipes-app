@@ -1,0 +1,5 @@
+.recommended-card {
+  display: flex;
+  overflow: scroll;
+  width: 100%;
+}

@@ -5,11 +5,11 @@ import useFetchRecomendacoes from '../hooks/useFetchRecomendacoes';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Instructions from '../components/details recipes/Instructions';
 import Ingredients from '../components/details recipes/Ingredients';
-import CardRecipe from '../components/CardRecipe';
 import AppContext from '../context/AppContext';
+import Recommended from '../components/details recipes/Recommended';
 
 function DrinkDetails(props) {
-  const { detailsPage, recomendacoes } = useContext(AppContext);
+  const { detailsPage } = useContext(AppContext);
   const { match: { params: { id } } } = props;
   const drinkURL = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
   const drinks = 'drinks';
@@ -23,17 +23,7 @@ function DrinkDetails(props) {
       <HeaderRecipes type="Drink" bool />
       <Instructions />
       <Ingredients recipe={ detailsPage } />
-      {recomendacoes.map((meal, index) => (
-        <CardRecipe
-          page="comidas"
-          id={ meal.idMeal }
-          key={ index }
-          type="Meal"
-          recipe={ meal }
-          index={ index }
-          bool
-        />
-      ))}
+      <Recommended page="comidas" type="Meal" />
       <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
     </main>
   );

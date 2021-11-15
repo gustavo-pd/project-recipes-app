@@ -5,11 +5,11 @@ import useFetchRecomendacoes from '../hooks/useFetchRecomendacoes';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Instructions from '../components/details recipes/Instructions';
 import Ingredients from '../components/details recipes/Ingredients';
-import CardRecipe from '../components/CardRecipe';
 import AppContext from '../context/AppContext';
+import Recommended from '../components/details recipes/Recommended';
 
 function FoodDetails(props) {
-  const { detailsPage, recomendacoes } = useContext(AppContext);
+  const { detailsPage } = useContext(AppContext);
   const { strYoutube } = detailsPage;
   const { match: { params: { id } } } = props;
   const foodURL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
@@ -37,17 +37,7 @@ function FoodDetails(props) {
           src={ strYoutube }
         />
       </video>
-      {recomendacoes.map((drink, index) => (
-        <CardRecipe
-          page="bebidas"
-          id={ drink.idDrink }
-          key={ index }
-          type="Drink"
-          recipe={ drink }
-          index={ index }
-          bool
-        />
-      ))}
+      <Recommended page="bebidas" type="Drink" />
       <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
     </main>
   );
