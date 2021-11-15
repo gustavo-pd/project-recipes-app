@@ -1,9 +1,10 @@
 .cardRecipe {
+  border: red solid 1px;
   grid-template-rows: 100px 100px;
   height: 172px;
   left: 11px;
   top: 1165px;
-  width: 162px;
+  width: 180px;
 }
 
 .imageCardRecipe {

@@ -23,7 +23,7 @@ function DrinkDetails(props) {
       <HeaderRecipes type="Drink" bool />
       <Instructions />
       <Ingredients recipe={ detailsPage } />
-      <Recommended page="comidas" type="Meal" />
+      <Recommended page="comidas" type="Meal" idType="idMeal" />
       <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
     </main>
   );

@@ -37,7 +37,7 @@ function FoodDetails(props) {
           src={ strYoutube }
         />
       </video>
-      <Recommended page="bebidas" type="Drink" />
+      <Recommended page="bebidas" type="Drink" idType="idDrink" />
       <button type="button" data-testid="start-recipe-btn">Iniciar Receita</button>
     </main>
   );
