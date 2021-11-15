@@ -8,7 +8,6 @@ function Recommended({ page, type, idType }) {
   const { recomendacoes } = useContext(AppContext);
   const numberSix = 6;
   const filterRecommended = recomendacoes.splice(0, numberSix);
-  console.log(recomendacoes);
   return (
     <section className="recommended-card">
       {filterRecommended.map((drinkOrMeals, index) => (
