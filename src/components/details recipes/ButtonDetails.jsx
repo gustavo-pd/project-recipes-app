@@ -41,7 +41,7 @@ function ButtonDetails({ id, type }) {
 
   return (
     <div
-      className={doneRecipe && "displayBtn"}
+      className={ doneRecipe && 'displayBtn' }
     >
       <Link to={ `/${page}/${id}/in-progress` }>
         <button
