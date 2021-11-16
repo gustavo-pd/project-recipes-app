@@ -13,7 +13,7 @@ function ButtonDetails({ id, type }) {
     }
     const storage = JSON.parse(localStorage.getItem('doneRecipes'));
     const filterStorage = storage.some((obj) => Number(obj.id) === Number(id));
-    setDoneRecipe(!filterStorage);
+    setDoneRecipe(filterStorage);
   }
 
   function checkProgressRecipe() {
@@ -40,18 +40,18 @@ function ButtonDetails({ id, type }) {
   const page = (type === 'meals') ? 'comidas' : 'bebidas';
 
   return (
-    <div>
-      { doneRecipe && (
-        <Link to={ `/${page}/${id}/in-progress` }>
-          <button
-            type="button"
-            data-testid="start-recipe-btn"
-            className="buttonStart"
-          >
-            { recipeInProgress ? 'Continuar Receita' : 'Iniciar Receita'}
-          </button>
-        </Link>
-      )}
+    <div
+      className={doneRecipe && "displayBtn"}
+    >
+      <Link to={ `/${page}/${id}/in-progress` }>
+        <button
+          type="button"
+          data-testid="start-recipe-btn"
+          className="buttonStart"
+        >
+          { recipeInProgress ? 'Continuar Receita' : 'Iniciar Receita'}
+        </button>
+      </Link>
     </div>
   );
 }

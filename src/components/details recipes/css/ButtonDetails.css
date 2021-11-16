@@ -3,3 +3,7 @@
   position: fixed;
   width: 100%;
 }
+
+.displayBtn {
+  display: none;
+}
