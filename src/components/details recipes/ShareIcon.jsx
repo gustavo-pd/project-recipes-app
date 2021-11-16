@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AppContext from '../../context/AppContext';
 import shareIcon from '../../images/shareIcon.svg';
 
-const copy = require('clipboard-copy');
+const copy = window.navigator.clipboard;
 
 function ShareIcon({ type, recipe = {}, index = '' }) {
   const [linkCopy, setLinlCopy] = useState(false);
@@ -28,9 +28,20 @@ function ShareIcon({ type, recipe = {}, index = '' }) {
 
   const TRES_SEGUNDOS = 3000;
 
+  // function copyToClipboard(text) {
+  //   if(navigator.clipboard) {
+  //     navigator.clipboard.writeText(text);
+  //   }
+  //   else{
+  //     alert(text);
+  //   }
+  // }
+
   function handleShare() {
     const url = `http://localhost:3000/${page()}/${recipeId()}`;
-    copy(url);
+    if (copy) {
+      copy.writeText(url);
+    }
     setLinlCopy(true);
     setTimeout(() => {
       setLinlCopy(false);
