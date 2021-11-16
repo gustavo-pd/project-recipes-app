@@ -24,16 +24,13 @@ function Ingredients({ recipe, boolean = false, id, type }) {
     igredientes = [...igredientes, `${produtos[index]} - ${string}`];
   });
 
-  console.log(produtos);
-  console.log(quantidade);
-
   function buttonDisabled() {
     const cocktails = 'cocktails';
     const key = type === 'meals' ? type : cocktails;
     if (!JSON.parse(localStorage.getItem('inProgressRecipes'))) {
       return setEndRecipe(true);
     }
-    console.log('fgd');
+
     const saveObj = JSON.parse(localStorage.getItem('inProgressRecipes'));
     if (saveObj[key][id]) {
       const filterIngredients = saveObj[key][id];
@@ -54,7 +51,6 @@ function Ingredients({ recipe, boolean = false, id, type }) {
 
   return (
     <main>
-      {console.log(igredientes)}
       <h3>Ingredients</h3>
       <ol>
         { igredientes.map((string, index) => (

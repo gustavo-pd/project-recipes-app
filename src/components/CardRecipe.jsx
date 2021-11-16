@@ -19,7 +19,7 @@ function CardRecipe({ recipe, type, index, page, id, bool = false }) {
           alt={ `${type}` }
         />
         <p
-          data-testid={ `${index}-card-name` }
+          data-testid={ bool ? `${index}-recomendation-title` : `${index}-card-name` }
           className="nameCardRecipe"
         >
           { recipe[name] }
