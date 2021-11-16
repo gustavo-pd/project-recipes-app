@@ -40,7 +40,9 @@ function ShareIcon({ type, recipe = {}, index = '' }) {
   function handleShare() {
     const url = `http://localhost:3000/${page()}/${recipeId()}`;
     if (copy) {
-      copy.writeText(url);
+      copy.writeText(url)
+        .then(() => console.log('text copied !'))
+        .catch(() => console.log('error'));
     }
     setLinlCopy(true);
     setTimeout(() => {
