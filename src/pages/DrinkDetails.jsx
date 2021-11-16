@@ -23,11 +23,9 @@ function DrinkDetails(props) {
     <main>
       <HeaderRecipes type="Drink" bool />
       <Instructions />
-
       <Ingredients recipe={ detailsPage } id={ id } type={ drinks } />
-      <ButtonDetails id={ id } type={ drinks } />
-
       <Recommended page="comidas" type="Meal" idType="idMeal" />
+      <ButtonDetails id={ id } type={ drinks } />
     </main>
   );
 }

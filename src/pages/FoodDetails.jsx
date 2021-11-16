@@ -25,21 +25,10 @@ function FoodDetails(props) {
       <HeaderRecipes type="Meal" />
       <Instructions />
       <Ingredients recipe={ detailsPage } id={ id } type={ meals } />
-      <ButtonDetails id={ id } type={ meals } />
-      <video
-        width="320"
-        height="240"
-        data-testid="video"
-        src={ strYoutube }
-      >
-        <track
-          default
-          kind="captions"
-          srcLang="en"
-          src={ strYoutube }
-        />
-      </video>
       <Recommended page="bebidas" type="Drink" idType="idDrink" />
+      <ButtonDetails id={ id } type={ meals } />
+      <br />
+      <br />
     </main>
   );
 }

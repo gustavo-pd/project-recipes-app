@@ -11,6 +11,7 @@ function Recommended({ page, type, idType }) {
   const filterRecommended = recomendacoes.filter((obj, index) => index <= maxLength);
   return (
     <section className="recommended-card">
+      {console.log(filterRecommended)}
       {filterRecommended.map((drinkOrMeals, index) => (
         <CardRecipe
           page={ page }
