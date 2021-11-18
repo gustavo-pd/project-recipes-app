@@ -15,12 +15,18 @@ function AppProvider({ children }) {
   const [recomendacoes, setRecomendacoes] = useState([]);
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
   const [favoriteIcon, setFavoriteIcon] = useState(true);
+  const [renderDrinkIngredients, setRenderDrinksIngredients] = useState(false);
+  const [renderMealIngredients, setRenderMealIngredients] = useState(false);
+  const [recipeIngredients, setRecipeIngredients] = useState([]);
+  const [recipeMealIngredients, setMealRecipeIngredients] = useState([]);
 
   const stateDefault = {
     mealsFilter,
     setMealsFilter,
     initialRecipes,
     setInitialRecipes,
+    recipeIngredients,
+    setRecipeIngredients,
     category,
     setCategory,
     renderCategoryRecipe,
@@ -41,6 +47,12 @@ function AppProvider({ children }) {
     setFavoriteRecipes,
     favoriteIcon,
     setFavoriteIcon,
+    renderDrinkIngredients,
+    setRenderDrinksIngredients,
+    renderMealIngredients,
+    setRenderMealIngredients,
+    recipeMealIngredients,
+    setMealRecipeIngredients,
   };
 
   return (

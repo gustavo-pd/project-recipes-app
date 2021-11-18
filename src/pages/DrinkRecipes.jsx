@@ -8,7 +8,8 @@ import useFetchCategoryList from '../hooks/useFetchCategoryList';
 import AppContext from '../context/AppContext';
 
 function DrinkRecipes() {
-  const { initialRecipes, setInitialRecipes, searchBar } = useContext(AppContext);
+  const { initialRecipes, setInitialRecipes, searchBar,
+    recipeIngredients, renderDrinkIngredients } = useContext(AppContext);
   const [initialDrinks, setInitialDrinks] = useState([]);
 
   const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
@@ -39,16 +40,28 @@ function DrinkRecipes() {
           initial={ initialDrinks }
         />
       ))}
-      { !searchBar && initialRecipes.map((objRecipe, index) => (
-        <CardRecipe
-          page="bebidas"
-          id={ objRecipe.idDrink }
-          key={ index }
-          type="Drink"
-          recipe={ objRecipe }
-          index={ index }
-        />
-      )) }
+      { renderDrinkIngredients ? (
+        !searchBar && recipeIngredients.map((objRecipe, index) => (
+          <CardRecipe
+            page="bebidas"
+            id={ objRecipe.idDrink }
+            key={ index }
+            type="Drink"
+            recipe={ objRecipe }
+            index={ index }
+          />
+        )))
+        : (
+          !searchBar && initialRecipes.map((objRecipe2, index) => (
+            <CardRecipe
+              page="bebidas"
+              id={ objRecipe2.idDrink }
+              key={ index }
+              type="Drink"
+              recipe={ objRecipe2 }
+              index={ index }
+            />
+          ))) }
       <Footer />
     </main>
   );
