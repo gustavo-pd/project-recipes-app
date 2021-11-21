@@ -1,16 +1,20 @@
 import { useContext, useEffect } from 'react';
 import AppContext from '../context/AppContext';
-import recipesDetailsAPI from '../services/recipesDetailsAPI';
+import categorysAPI from '../services/categorysAPI';
 
-function useFetchRecipeDetails(url, type) {
-  const { setDetailsPage } = useContext(AppContext);
+function useFetchCategoryList(url, key) {
+  const { setCategory, category } = useContext(AppContext);
   useEffect(() => {
     (async () => {
-      const returnResultAPI = await recipesDetailsAPI(url, type);
-      const result = (returnResultAPI === undefined) ? {} : await returnResultAPI[0];
-      await setDetailsPage(result);
+      const categories = await categorysAPI(url, key);
+      setCategory(categories);
     })();
   }, []);
+
+  const arrayOfCategory = [...category];
+  const maxOfCategory = 5;
+  arrayOfCategory.splice(maxOfCategory, arrayOfCategory.length);
+  return arrayOfCategory;
 }
 
-export default useFetchRecipeDetails;
+export default useFetchCategoryList;

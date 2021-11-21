@@ -21,7 +21,6 @@ function ButtonDetails({ id, type }) {
       return setRecipeInProgress(false);
     }
     const storage = JSON.parse(localStorage.getItem('inProgressRecipes'));
-    console.log(storage);
     if (type === 'meals') {
       const bool = Object.keys(storage.meals).some((idMeals) => idMeals === id);
       return setRecipeInProgress(bool);

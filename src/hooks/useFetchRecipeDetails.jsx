@@ -7,7 +7,8 @@ function useFetchRecipeDetails(url, type) {
   useEffect(() => {
     (async () => {
       const returnResultAPI = await recipesDetailsAPI(url, type);
-      setDetailsPage(returnResultAPI[0]);
+      const result = (returnResultAPI === undefined) ? {} : await returnResultAPI[0];
+      await setDetailsPage(result);
     })();
   }, []);
 }
