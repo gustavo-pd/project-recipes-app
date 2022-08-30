@@ -42,6 +42,8 @@
 <p>No desenvolvimento do projeto eram feitas duas meetings diárias, para definir as jobs de cada um e visualizar como estava o progresso do site.</p>
 <p>Utilizamos o Trello para organização, aplicando a metodologia ágil Kanban.</p>
 <p>Na aplicação desenvolvida é possível ver, buscar, filtrar, favoritar e acompanhar o progresso de preparação de receitas e drinks!</p>
+</br>
+<p>obs: O CSS da aplicação ainda não foi finalizado, porém ela está com todas funcionalidades e funcionando 100%.</p>
 
 <img src="./src/images/ExplorarIngredientesMeal.gif" alt="Explore page ingredients">
 
