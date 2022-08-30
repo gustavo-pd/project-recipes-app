@@ -44,58 +44,23 @@
 <p>Na aplicação desenvolvida é possível ver, buscar, filtrar, favoritar e acompanhar o progresso de preparação de receitas e drinks!</p>
 
 <img src="./src/images/ExplorarIngredientesMeal.gif" alt="Explore page ingredients">
-<img src="./src/images/ExplorarMealsareas.gif" alt="Explore page area">
-
 
 <h2 id="howtouse">Como executar o projeto</h2>
 
   1. Clone o repositório
-    * `git clone https://github.com/gustavo-pd/project-trybe-futebol-clube.git`.
+    * `git clone https://github.com/gustavo-pd/project-recipes-app`.
     * Entre na pasta do repositório que você acabou de clonar:
-      * `cd project-trybe-futebol-clube`
+      * `cd project-recipes-app`
 </br>
 
   2. Instale as dependências:
     * `npm install`
 </br>
 
-  3. Rode o Docker para unir e subir todas as partes:
-    * `npm run compose:up` para upar ou `npm run compose:down` para derrubar
+  3. Rode o NPM start para abrir o projeto no localhost pelo navegador:
+    * `npm run start`
 </br>
 
-  4. O front-end irá rodar na porta 3000, e o back-end na porta 3001, para acessar o front-end, acesse no seu navegador:
-  * front-end: `http://localhost:3000`
-  ou
-  * back-end: `http://localhost:3001`
+  4. Acesse no seu navegador:
+    * `http://localhost:3000`
 </br>
-
-  5. Para fazer login com o admin e poder gerenciar partidas:
-  * Login: `admin@admin.com` Password: `secret_admin`
-</br>
-
-  Para fazer login como usuário:
-  * Login: `user@user.com` Password: `secret_user`
-</br>
-</br>
-</br>
-  
-
-Na sua máquina você deve ter:
-</br>
- - Sistema Operacional Distribuição Unix
- - Node versão 16  
- - Docker
- - Docker-compose versão 1.29.2
-</br>	
-
-➡️ O `node` deve ter versão igual ou superior à `16.15.0 LTS`. 
-	* Para instalar o nvm, [acesse esse link](https://github.com/nvm-sh/nvm#installing-and-updating);
-	*Rode os comandos abaixo para instalar a versão correta de `node` e usá-la:
-		* `nvm install 16 --lts`
-		* `nvm use 16`
-		* `nvm alias default 16` 
-</br>
-
-➡️ O`docker-compose` deve ter versão igual ou superior à`ˆ1.29.2`:
-	* Use esse [link de referência para realizar a instalação corretamente no ubuntu](https://app.betrybe.com/course/back-end/docker/orquestrando-containers-com-docker-compose/6e8afaef-566a-47f2-9246-d3700db7a56a/conteudo/0006a231-1a10-48a2-ac82-9e03e205a231/instalacao/abe40727-6310-4ad8-bde6-fd1e919dadc0?use_case=side_bar);
-	* Acesse o [link da documentação oficial com passos para desinstalar] (https://docs.docker.com/compose/install/#uninstallation) caso necessário.
