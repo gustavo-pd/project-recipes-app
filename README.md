@@ -13,11 +13,11 @@
 <p>O Recipes App foi criado para ser um aplicativo de receitas de comida e drinks, com diversas funcionalidades diferentes.</p>
 <p>Este projeto foi realizado durante o curso da Trybe, com seu objetivo fixar todos os conteúdos estudados durante o módulo de front-end, foi realizado em grupo, para reforçar simularmos o dia-a-dia de trabalho em uma empresa.
 <p>As pessoas realizadoras deste projeto são:</p>
-[Bel Albuquerque](https://github.com/Bel-Albuquerque),
-[Elithon Silva](https://github.com/oelithon),
-[Enzo Almeida](https://github.com/EnzoThome-et),
-[Gustavo Pozzan Dalmoro](https://github.com/gustavo-pd) e
-[Theo Lima](https://github.com/theolima14b)
+<p>- Bel Albuquerque (<link>https://github.com/Bel-Albuquerque</link>),</p>
+<p>- Elithon Silva (<link>https://github.com/oelithon</link>),</p>
+<p>- Enzo Almeida (<link>https://github.com/EnzoThome-et</link>),</p>
+<p>- Gustavo Pozzan Dalmoro (<link>https://github.com/gustavo-pd</link>) e</p>
+<p>- Theo Lima (<link>https://github.com/theolima14b</link>).</p>
 <p>Ele foi realizado em novembro de 2021, no módulo de Front-end.</p>
 </br>
 <p>As APIs utilizada para obter as receitas foram: </p>
