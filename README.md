@@ -21,31 +21,30 @@
 <p>- Theo Lima (<link>https://github.com/theolima14b</link>).</p>
 </br>
 <p>As APIs utilizada para obter as receitas foram: </p>
-<p>Meals(comidas):<link>https://www.themealdb.com/api.php</link></p>
-<p>Cocktails(bebidas):<link>https://www.thecocktaildb.com/api.php</link></p>
+<p>- Meals(comidas): <link>https://www.themealdb.com/api.php</link></p>
+<p>- Cocktails(bebidas): <link>https://www.thecocktaildb.com/api.php</link></p>
 
 <h2 id="tecnologies">Técnologias utilizadas</h2>
 
 <ul>
-  <li>Docker</li>
-  <li>MySQL e Sequelize</li>
-  <li>Typescript</li>
-  <li>NodeJS</li>
-  <li>Express</li>
-  <li>API Rest - CRUD</li>
-  <li>Modelo de camadas MSC e POO</li>
-  <li>Testes de integração - Mocha, chai e sinon</li>
+  <li>ReactJS</li>
+  <li>React Hooks</li>
+  <li>Context API</li>
+  <li>Metodologias ágeis - Kanban</li>
+  <li>Testes unitários - React testing library</li>
 </ul>
 
 <h2 id="development">Desenvolvimento</h2>
 
-<p>Neste projeto pude implementar todo o <b>back-end</b> <i>(./app/backend)</i> da aplicação TFC, de modo que o usuário possa ver a tabela atualizada e também o resultado de cada jogo.</p>
-<p>Para o usuário do administrador é possível adicionar mais partidas, atualizando automaticamente a tabela.</p>
-<p>Foi utilizado o docker-compose com o papel de unir todas as partes e subir um projeto completo.</p>
-<p>Banco de dados criado em MySQL, utilizando a ferramenta Sequelize. Foram adicionados dados por via de Seeders para popular a tabela e mostrar o funcionamento.</p>
-<p>O Back-end foi desenvolvido utilizando NodeJS, Typescript e Express. Implementando regras de negócio para popular adequadamente a tabela disponível no front-end que será exibida para a pessoa usuária do sistema.</p>
+<p>Neste projeto pude implementar toda página de <b>Explorar</b>da aplicação, e também as páginas dentro dela, e as funcionalidades das mesmas.
+<p>./src/pages/ <i>ExploreDrinks.jsx, ExploreFood.jsx, Explore.jsx, FoodsByIngredients,jsx, FoodsByOrigin.jsx</i> e também FoodRecipes.jsx e DrinkRecipes.jsx</p>
+<p>Nas outras páginas pude contribuir com meus colegas de grupo e também fazer code reviews.</p>
+<p>No desenvolvimento do projeto eram feitas duas meetings diárias, para definir as jobs de cada um e visualizar como estava o progresso do site.</p>
+<p>Utilizamos o Trello para organização, aplicando a metodologia ágil Kanban.</p>
+<p>Na aplicação desenvolvida é possível ver, buscar, filtrar, favoritar e acompanhar o progresso de preparação de receitas e drinks!</p>
 
-<img src="./app/frontend/src/images/tfc.gif" alt="TFC Home page">
+<img src="./src/images/ExplorarIngredientesMeal.gif" alt="Explore page ingredients">
+<img src="./src/images/ExplorarMealsareas.gif" alt="Explore page area">
 
 
 <h2 id="howtouse">Como executar o projeto</h2>
