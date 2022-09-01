@@ -138,41 +138,49 @@ function SearchBar() {
     <nav className="main-search-bar">
       <div className="sec-search-bar">
         <input
+          className="input-search"
           type="text"
           data-testid="search-input"
           onChange={ ({ target }) => setInputValue(target.value) }
         />
-        <label htmlFor="ingredient-search-radio">
-          <input
-            type="radio"
-            onChange={ () => setSearchBarFilter('ingrediente') }
-            data-testid="ingredient-search-radio"
-            name="filter"
-            value="ingrediente"
-          />
-          Ingrediente
-        </label>
-        <label htmlFor="name-search-radio">
-          <input
-            type="radio"
-            onChange={ () => setSearchBarFilter('nome') }
-            data-testid="name-search-radio"
-            name="filter"
-            value="nome"
-          />
-          Nome
-        </label>
-        <label htmlFor="first-letter-search-radio">
-          <input
-            type="radio"
-            onChange={ () => setSearchBarFilter('letra') }
-            data-testid="first-letter-search-radio"
-            name="filter"
-            value="letra"
-          />
-          Primeira Letra
-        </label>
+        <div className="container-input">
+          <label htmlFor="ingredient-search-radio">
+            <input
+              type="radio"
+              onChange={ () => setSearchBarFilter('ingrediente') }
+              data-testid="ingredient-search-radio"
+              name="filter"
+              value="ingrediente"
+            />
+            Ingrediente
+          </label>
+        </div>
+        <div className="container-input">
+          <label htmlFor="name-search-radio">
+            <input
+              type="radio"
+              onChange={ () => setSearchBarFilter('nome') }
+              data-testid="name-search-radio"
+              name="filter"
+              value="nome"
+            />
+            Nome
+          </label>
+        </div>
+        <div className="container-input">
+          <label htmlFor="first-letter-search-radio">
+            <input
+              type="radio"
+              onChange={ () => setSearchBarFilter('letra') }
+              data-testid="first-letter-search-radio"
+              name="filter"
+              value="letra"
+            />
+            Primeira Letra
+          </label>
+        </div>
         <button
+          className="button-search"
           type="button"
           data-testid="exec-search-btn"
           onClick={ handleClick }
