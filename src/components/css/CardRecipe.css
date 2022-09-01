@@ -1,11 +1,36 @@
 .cardRecipe {
   grid-template-rows: 100px 100px;
-  height: 200px;
-  width: 190px;
+  height: 215px;
+  width: 160px;
+  margin: 10px;
+  text-align: center;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px;
 }
 
 .imageCardRecipe {
-  height: 180px;
-  width: 180px;
+  height: 160px;
+  width: 150px;
+  margin: 5px;
+  border-radius: 10px;
 }
 
+.nameCardRecipe {
+  color: brown;
+  font-weight: 550;
+  font-size: 18px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.link-card {
+  text-decoration: none;
+}
+
+.card-title {
+  display: flex;
+  height: 60px;
+  margin: 0 auto;
+  justify-content: flex-end;
+}

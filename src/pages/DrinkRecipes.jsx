@@ -6,6 +6,7 @@ import useFetchRecipes from '../hooks/useFetchRecipes';
 import CategoryButtons from '../components/CategoryButtons';
 import useFetchCategoryList from '../hooks/useFetchCategoryList';
 import AppContext from '../context/AppContext';
+import '../components/css/Drinks.css';
 
 function DrinkRecipes() {
   const { initialRecipes, setInitialRecipes, searchBar,
@@ -21,47 +22,54 @@ function DrinkRecipes() {
   const arrayOfCategory = useFetchCategoryList(urlCategory, key);
 
   return (
-    <main>
+    <main className="main-drinks">
       <Header title="Bebidas" bool />
-      { !searchBar && (
-        <button
-          data-testid="All-category-filter"
-          type="button"
-          onClick={ () => setInitialRecipes(initialDrinks) }
-        >
-          All
+      <div className="nav">
+        { !searchBar && (
+          <div className="container">
+            <button
+              className="category-button"
+              data-testid="All-category-filter"
+              type="button"
+              onClick={ () => setInitialRecipes(initialDrinks) }
+            >
+              All
 
-        </button>)}
-      { !searchBar && arrayOfCategory.map((obj, index) => (
-        <CategoryButtons
-          key={ index }
-          categoryName={ obj.strCategory }
-          type={ key }
-          initial={ initialDrinks }
-        />
-      ))}
-      { renderDrinkIngredients ? (
-        !searchBar && recipeIngredients.map((objRecipe, index) => (
-          <CardRecipe
-            page="bebidas"
-            id={ objRecipe.idDrink }
+            </button>
+          </div>)}
+        { !searchBar && arrayOfCategory.map((obj, index) => (
+          <CategoryButtons
             key={ index }
-            type="Drink"
-            recipe={ objRecipe }
-            index={ index }
+            categoryName={ obj.strCategory }
+            type={ key }
+            initial={ initialDrinks }
           />
-        )))
-        : (
-          !searchBar && initialRecipes.map((objRecipe2, index) => (
+        ))}
+      </div>
+      <div className="container-cards">
+        { renderDrinkIngredients ? (
+          !searchBar && recipeIngredients.map((objRecipe, index) => (
             <CardRecipe
               page="bebidas"
-              id={ objRecipe2.idDrink }
+              id={ objRecipe.idDrink }
               key={ index }
               type="Drink"
-              recipe={ objRecipe2 }
+              recipe={ objRecipe }
               index={ index }
             />
-          ))) }
+          )))
+          : (
+            !searchBar && initialRecipes.map((objRecipe2, index) => (
+              <CardRecipe
+                page="bebidas"
+                id={ objRecipe2.idDrink }
+                key={ index }
+                type="Drink"
+                recipe={ objRecipe2 }
+                index={ index }
+              />
+            ))) }
+        </div>
       <Footer />
     </main>
   );

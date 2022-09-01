@@ -7,8 +7,8 @@ function CardRecipe({ recipe, type, index, page, id, bool = false }) {
   const image = `str${type}Thumb`;
   const name = `str${type}`;
   return (
-    <Link to={ `/${page}/${id}` }>
-      <section
+    <Link to={ `/${page}/${id}` } className="link-card">
+      <div
         data-testid={ bool ? `${index}-recomendation-card` : `${index}-recipe-card` }
         className="cardRecipe"
       >
@@ -18,13 +18,15 @@ function CardRecipe({ recipe, type, index, page, id, bool = false }) {
           src={ recipe[image] }
           alt={ `${type}` }
         />
-        <p
-          data-testid={ bool ? `${index}-recomendation-title` : `${index}-card-name` }
-          className="nameCardRecipe"
-        >
-          { recipe[name] }
-        </p>
-      </section>
+        <div className="card-title">
+          <p
+            data-testid={ bool ? `${index}-recomendation-title` : `${index}-card-name` }
+            className="nameCardRecipe"
+          >
+            { recipe[name] }
+          </p>
+        </div>
+      </div>
     </Link>
   );
 }

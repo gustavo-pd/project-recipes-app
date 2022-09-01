@@ -34,7 +34,6 @@ function FoodRecipes() {
               onClick={ () => setInitialRecipes(initialFood) }
             >
               All
-
             </button>
           </div>) }
         { !searchBar && (arrayOfCategory.map((obj, index) => (
@@ -46,28 +45,30 @@ function FoodRecipes() {
           />
         )))}
       </div>
-      { renderMealIngredients ? (
-        !searchBar && recipeMealIngredients.map((objRecipe, index) => (
-          <CardRecipe
-            page="comidas"
-            id={ objRecipe.idMeal }
-            key={ index }
-            type="Meal"
-            recipe={ objRecipe }
-            index={ index }
-          />
-        )))
-        : (
-          !searchBar && initialRecipes.map((objRecipe2, index) => (
+      <div className="container-cards">
+        { renderMealIngredients ? (
+          !searchBar && recipeMealIngredients.map((objRecipe, index) => (
             <CardRecipe
               page="comidas"
-              id={ objRecipe2.idMeal }
+              id={ objRecipe.idMeal }
               key={ index }
               type="Meal"
-              recipe={ objRecipe2 }
+              recipe={ objRecipe }
               index={ index }
             />
-          ))) }
+          )))
+          : (
+            !searchBar && initialRecipes.map((objRecipe2, index) => (
+              <CardRecipe
+                page="comidas"
+                id={ objRecipe2.idMeal }
+                key={ index }
+                type="Meal"
+                recipe={ objRecipe2 }
+                index={ index }
+              />
+            ))) }
+        </div>
       <Footer />
     </main>
   );

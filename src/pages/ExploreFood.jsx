@@ -26,34 +26,36 @@ function ExploreFood({ history }) {
   };
 
   return (
-    <main>
+    <main className="main-explore">
       <Header title="Explorar Comidas" bool={ false } />
-      <section>
-        <button
-          data-testid="explore-by-ingredient"
-          type="button"
-          className="explore-btn"
-          onClick={ handleClick }
-        >
-          Por Ingredientes
-        </button>
-        <button
-          data-testid="explore-by-area"
-          type="button"
-          className="explore-btn"
-          onClick={ handleClick }
-        >
-          Por Local de Origem
-        </button>
-        <button
-          data-testid="explore-surprise"
-          type="button"
-          onClick={ handleClick }
-          className="explore-btn"
-        >
-          Me Surpreenda!
-        </button>
-      </section>
+      <div className="explore-page">
+        <div className="container-buttons">
+          <button
+            data-testid="explore-by-ingredient"
+            type="button"
+            className="explore-btn"
+            onClick={ handleClick }
+          >
+            Por Ingredientes
+          </button>
+          <button
+            data-testid="explore-by-area"
+            type="button"
+            className="explore-btn"
+            onClick={ handleClick }
+          >
+            Por Local de Origem
+          </button>
+          <button
+            data-testid="explore-surprise"
+            type="button"
+            onClick={ handleClick }
+            className="explore-btn"
+          >
+            Me Surpreenda!
+          </button>
+        </div>
+      </div>
       <Footer />
     </main>
   );

@@ -1,15 +1,19 @@
 .category-button {
   height: 35px;
   width: 90px;
-  background-color: #c4c4c4;
-  border-radius: 0px;
+  background-color: brown;
+  border-radius: 7px;
   border-width: 0px;
   box-shadow: 4px 2px 2px black;
   font-size: 16px;
+  font-weight: 550;
+  color: white;
 }
 
 .category-button:hover {
-  background-color: #4CAF50;
+  background-color: rgb(235, 235, 235);
+  color: brown;
+  border-color: brown;
 }
 
 .container {

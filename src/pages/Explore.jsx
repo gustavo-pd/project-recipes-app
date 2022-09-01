@@ -14,26 +14,28 @@ function Explore({ history }) {
   };
 
   return (
-    <main>
+    <main className="main-explore">
       <Header title="Explorar" bool={ false } />
-      <section>
-        <button
-          data-testid="explore-food"
-          type="button"
-          className="explore-btn"
-          onClick={ redirectExploreFood }
-        >
-          Explorar Comidas
-        </button>
-        <button
-          data-testid="explore-drinks"
-          type="button"
-          className="explore-btn"
-          onClick={ redirectExploreDrinks }
-        >
-          Explorar Bebidas
-        </button>
-      </section>
+      <div className="explore-page">
+        <div className="container-buttons">
+          <button
+            data-testid="explore-food"
+            type="button"
+            className="explore-btn"
+            onClick={ redirectExploreFood }
+          >
+            Explorar Comidas
+          </button>
+          <button
+            data-testid="explore-drinks"
+            type="button"
+            className="explore-btn"
+            onClick={ redirectExploreDrinks }
+          >
+            Explorar Bebidas
+          </button>
+        </div>
+      </div>
       <Footer />
     </main>
   );

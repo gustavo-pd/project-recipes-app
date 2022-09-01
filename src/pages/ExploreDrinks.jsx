@@ -24,26 +24,28 @@ function ExploreDrinks({ history }) {
   };
 
   return (
-    <main>
+    <main className="main-explore">
       <Header title="Explorar Bebidas" bool={ false } />
-      <section>
-        <button
-          data-testid="explore-by-ingredient"
-          type="button"
-          className="explore-btn"
-          onClick={ handleClick }
-        >
-          Por Ingredientes
-        </button>
-        <button
-          data-testid="explore-surprise"
-          type="button"
-          className="explore-btn"
-          onClick={ handleClick }
-        >
-          Me Surpreenda!
-        </button>
-      </section>
+      <div className="explore-page">
+        <div className="container-buttons">
+          <button
+            data-testid="explore-by-ingredient"
+            type="button"
+            className="explore-btn"
+            onClick={ handleClick }
+          >
+            Por Ingredientes
+          </button>
+          <button
+            data-testid="explore-surprise"
+            type="button"
+            className="explore-btn"
+            onClick={ handleClick }
+          >
+            Me Surpreenda!
+          </button>
+        </div>
+      </div>
       <Footer />
     </main>
   );
