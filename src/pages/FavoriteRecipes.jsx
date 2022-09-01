@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import FavoriteRecipeCard from '../components/FavoriteRecipeCard';
 import FilterButton from '../components/favorite recipes/FilterButton';
 import useLocalStorageToUpdateRecipes from '../hooks/useLocalStorageToUpdateRecipes';
+import '../components/css/Meals.css';
 
 function FavoriteRecipes() {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
@@ -36,21 +37,21 @@ function FavoriteRecipes() {
   };
 
   return (
-    <>
-      <main>
-        <Header title="Receitas Favoritas" bool={ false } />
+    <div className="main-meal">
+      <Header title="Receitas Favoritas" bool={ false } />
+      <div className="nav">
         <FilterButton name="All" id="filter-by-all-btn" onClick={ handleFilter } />
         <FilterButton name="Food" id="filter-by-food-btn" onClick={ handleFilter } />
         <FilterButton name="Drinks" id="filter-by-drink-btn" onClick={ handleFilter } />
-      </main>
-      <section>
+      </div>
+      <div className="container-cards">
         {filterRecipes.map(
           (recipe, index) => (
             <FavoriteRecipeCard key={ recipe.name } recipe={ recipe } index={ index } />
           ),
         )}
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
 export default FavoriteRecipes;

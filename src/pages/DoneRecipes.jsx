@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import FilterButton from '../components/favorite recipes/FilterButton';
 import CardDoneRecipe from '../components/CardDoneRecipe';
+import '../components/css/Meals.css';
 
 function DoneRecipes() {
   const [doneRecipes, setDoneRecipes] = useState([]);
@@ -31,23 +32,23 @@ function DoneRecipes() {
       setFilterDoneRecipes(doneRecipes);
     }
   };
-
+  
   return (
-    <>
-      <main>
-        <Header title="Receitas Feitas" bool={ false } />
-        <FilterButton name="All" id="filter-by-all-btn" onClick={ handleFilter } />
-        <FilterButton name="Food" id="filter-by-food-btn" onClick={ handleFilter } />
-        <FilterButton name="Drinks" id="filter-by-drink-btn" onClick={ handleFilter } />
-      </main>
-      <section>
+    <div className="main-meal">
+      <Header title="Receitas Feitas" bool={ false } />
+      <div className="nav">
+        <FilterButton name="All" onClick={ handleFilter } />
+        <FilterButton name="Food" onClick={ handleFilter } />
+        <FilterButton name="Drinks" onClick={ handleFilter } />
+      </div>
+      <div className="container-cards">
         {filterDoneRecipes.map(
           (recipe, index) => (
             <CardDoneRecipe key={ recipe.name } recipe={ recipe } index={ index } />
           ),
         )}
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
 export default DoneRecipes;

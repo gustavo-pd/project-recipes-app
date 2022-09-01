@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../css/CategoryButtons.css';
 
 function FilterButton({ name, id, onClick }) {
   return (
-    <button
-      name={ name }
-      type="button"
-      data-testid={ id }
-      onClick={ onClick }
-    >
-      {name}
-
-    </button>
+    <div className="container">
+      <button
+        className="category-button"
+        name={ name }
+        type="button"
+        data-testid={ id }
+        onClick={ onClick }
+      >
+        {name}
+      </button>
+    </div>
   );
 }
 
