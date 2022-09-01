@@ -6,6 +6,7 @@ import useFetchCategoryList from '../hooks/useFetchCategoryList';
 import CardRecipe from '../components/CardRecipe';
 import CategoryButtons from '../components/CategoryButtons';
 import AppContext from '../context/AppContext';
+import '../components/css/Meals.css';
 
 function FoodRecipes() {
   const { initialRecipes, setInitialRecipes, searchBar,
@@ -21,25 +22,30 @@ function FoodRecipes() {
   const arrayOfCategory = useFetchCategoryList(urlCategory, key);
 
   return (
-    <main>
+    <main className="main-meal">
       <Header title="Comidas" bool />
-      { !searchBar && (
-        <button
-          data-testid="All-category-filter"
-          type="button"
-          onClick={ () => setInitialRecipes(initialFood) }
-        >
-          All
+      <div className="nav">
+        { !searchBar && (
+          <div className="container">
+            <button
+              className="category-button"
+              data-testid="All-category-filter"
+              type="button"
+              onClick={ () => setInitialRecipes(initialFood) }
+            >
+              All
 
-        </button>) }
-      { !searchBar && (arrayOfCategory.map((obj, index) => (
-        <CategoryButtons
-          key={ index }
-          categoryName={ obj.strCategory }
-          type={ key }
-          initial={ initialFood }
-        />
-      )))}
+            </button>
+          </div>) }
+        { !searchBar && (arrayOfCategory.map((obj, index) => (
+          <CategoryButtons
+            key={ index }
+            categoryName={ obj.strCategory }
+            type={ key }
+            initial={ initialFood }
+          />
+        )))}
+      </div>
       { renderMealIngredients ? (
         !searchBar && recipeMealIngredients.map((objRecipe, index) => (
           <CardRecipe

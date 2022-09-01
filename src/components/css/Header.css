@@ -5,3 +5,43 @@
   height: 58px;
   justify-content: space-around;
 }
+
+.profile {
+  height: 46px;
+  width: 46px;
+}
+
+.profile-box {
+  margin-left: 10px;
+  height: 48px;
+  width: 48px;
+}
+
+.button-search {
+  margin-right: 10px;
+  height: 50px;
+  width: 60px;
+  border-radius: 8px;
+  border-width: 0px;
+}
+
+.button-search:hover {
+  background-color: #4CAF50;
+}
+
+.search-icon {
+  margin-top: 3px;
+  height: 39px;
+  width: 39px;
+}
+
+.title-box {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.title {
+  vertical-align: middle;
+  margin-top: 25px;
+}

@@ -9,7 +9,13 @@
   width: 100%;
 }
 
+.header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
+
 .main {
-  height: 640px;
-  width: 360px;
+  display: flex;
+  height: 100%;
 }

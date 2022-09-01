@@ -1,0 +1,12 @@
+.main-meal {
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  height: 102px;
+  flex-wrap: wrap;
+}

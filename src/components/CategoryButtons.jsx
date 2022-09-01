@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import './css/CardRecipe.css';
+import './css/CategoryButtons.css';
 import AppContext from '../context/AppContext';
 import fetchCategoryRecipes from '../services/categoryRecipes';
 
@@ -24,15 +25,16 @@ function CategoryButtons({ categoryName, type, initial }) {
   }
 
   return (
-    <nav>
+    <div className="container">
       <button
+        className="category-button"
         type="button"
         onClick={ () => handleClick(categoryName) }
         data-testid={ `${categoryName}-category-filter` }
       >
         { categoryName }
       </button>
-    </nav>
+    </div>
   );
 }
 

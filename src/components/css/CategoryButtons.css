@@ -1,0 +1,18 @@
+.category-button {
+  height: 35px;
+  width: 90px;
+  background-color: #c4c4c4;
+  border-radius: 0px;
+  border-width: 0px;
+  box-shadow: 4px 2px 2px black;
+  font-size: 16px;
+}
+
+.category-button:hover {
+  background-color: #4CAF50;
+}
+
+.container {
+  height: 20px;
+  margin: 5px;
+}

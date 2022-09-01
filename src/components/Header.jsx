@@ -19,16 +19,22 @@ function Header({ title, bool }) {
   return (
     <>
       <header className="header">
-        <Link to="/perfil">
-          <img data-testid="profile-top-btn" src={ profileIcon } alt="profile" />
-        </Link>
-        <h3 data-testid="page-title">{title}</h3>
+        <div className="profile-box">
+          <Link to="/perfil">
+            <img className="profile" src={ profileIcon } alt="profile" />
+          </Link>
+        </div>
+        <div className="title-box">
+          <h2 className="title" data-testid="page-title">{title}</h2>
+        </div>
         {bool && (
           <button
             type="button"
             onClick={ handleClick }
+            className="button-search"
           >
             <img
+              className="search-icon"
               data-testid="search-top-btn"
               src={ searchIcon }
               alt="Search Icon"

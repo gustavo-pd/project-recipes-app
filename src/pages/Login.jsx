@@ -1,18 +1,18 @@
-import { shape, func } from 'prop-types';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
+import '../components/css/Login.css';
 
-function Login({ history }) {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleButton = () => {
-    const MIN_PASSWORD_LENGTH = 6;
-    if (password.length <= MIN_PASSWORD_LENGTH) return false;
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) return false;
-    return true;
-  };
+  const history = useHistory();
 
-  const saveAtLocalStorage = () => {
+  const MIN_PASSWORD = 7;
+  const validEmail = /\S+@\S+\.\S+/;
+  const disableButton = validEmail.test(email) && password.length >= MIN_PASSWORD;
+
+  const handleClick = () => {
     localStorage.setItem('mealsToken', 1);
     localStorage.setItem('cocktailsToken', 1);
     localStorage.setItem('user', JSON.stringify({ email }));
@@ -20,47 +20,38 @@ function Login({ history }) {
   };
 
   return (
-    <form>
-      <label htmlFor="email">
-        Email:
+    <div className="mainPage">
+      <form className="form-centered">
         <input
-          type="text"
-          id="email"
-          name="email"
-          value={ email }
-          onChange={ (e) => setEmail(e.target.value) }
           data-testid="email-input"
-          placeholder="Email"
+          value={ email }
+          type="text"
+          name="username"
+          onChange={ (e) => setEmail(e.target.value) }
+          placeholder="Digite seu email"
+          className="email-input"
         />
-      </label>
-      <label htmlFor="password">
-        Senha:
         <input
-          type="password"
-          id="password"
-          name="password"
-          value={ password }
-          onChange={ (e) => setPassword(e.target.value) }
           data-testid="password-input"
-          placeholder="Password"
+          value={ password }
+          type="password"
+          name="password"
+          onChange={ (e) => setPassword(e.target.value) }
+          placeholder="Digite sua senha"
+          className="password-input"
         />
-      </label>
-      <button
-        type="button"
-        data-testid="login-submit-btn"
-        disabled={ !handleButton() }
-        onClick={ saveAtLocalStorage }
-      >
-        Entrar
-      </button>
-    </form>
+        <button
+          type="button"
+          data-testid="login-submit-btn"
+          disabled={ !disableButton }
+          onClick={ handleClick }
+          className="button-login"
+        >
+          Entrar
+        </button>
+      </form>
+    </div>
   );
 }
-
-Login.propTypes = {
-  history: shape({
-    push: func,
-  }).isRequired,
-};
 
 export default Login;
