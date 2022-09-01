@@ -3,8 +3,8 @@ import { useHistory } from 'react-router';
 import '../components/css/Login.css';
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('teste@email.com');
+  const [password, setPassword] = useState('1234567');
 
   const history = useHistory();
 

@@ -41,7 +41,7 @@ input::placeholder {
 }
 
 .email-input:hover {
-  background: rgba(126, 146, 127, 0.4);
+  background: rgba(175, 175, 175, 0.4);
 }
 
 .password-input {
@@ -59,11 +59,11 @@ input::placeholder {
 }
 
 .password-input:hover {
-  background: rgba(150, 151, 150, 0.4);
+  background: rgba(175, 175, 175, 0.4);
 }
 
 .button-login {
-  background-color:rgb(236, 236, 236);
+  background: rgba(175, 175, 175, 0.4);
   border-radius: 10px;
   color: brown;
   font-size: 30px;
@@ -76,7 +76,12 @@ input::placeholder {
 
 .button-login:hover {
   background: brown;
-  color: rgba(248, 248, 248, 0.904);
+  color: white;
+}
+
+.button-login:disabled {
+  background: rgb(221, 221, 221);
+  color: rgb(117, 117, 117);
 }
 
 .form-centered {

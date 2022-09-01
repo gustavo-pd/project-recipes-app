@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router';
 import AppContext from '../context/AppContext';
+import './css/SearchBar.css';
 import {
   fetchMealsByIngredient,
   fetchMealsByLetter,
@@ -134,53 +135,55 @@ function SearchBar() {
   };
 
   return (
-    <>
-      <input
-        type="text"
-        data-testid="search-input"
-        onChange={ ({ target }) => setInputValue(target.value) }
-      />
-      <label htmlFor="ingredient-search-radio">
+    <nav className="main-search-bar">
+      <div className="sec-search-bar">
         <input
-          type="radio"
-          onChange={ () => setSearchBarFilter('ingrediente') }
-          data-testid="ingredient-search-radio"
-          name="filter"
-          value="ingrediente"
+          type="text"
+          data-testid="search-input"
+          onChange={ ({ target }) => setInputValue(target.value) }
         />
-        Ingrediente
-      </label>
-      <label htmlFor="name-search-radio">
-        <input
-          type="radio"
-          onChange={ () => setSearchBarFilter('nome') }
-          data-testid="name-search-radio"
-          name="filter"
-          value="nome"
-        />
-        Nome
-      </label>
-      <label htmlFor="first-letter-search-radio">
-        <input
-          type="radio"
-          onChange={ () => setSearchBarFilter('letra') }
-          data-testid="first-letter-search-radio"
-          name="filter"
-          value="letra"
-        />
-        Primeira Letra
-      </label>
-      <button
-        type="button"
-        data-testid="exec-search-btn"
-        onClick={ handleClick }
-      >
-        {' '}
-        Buscar
+        <label htmlFor="ingredient-search-radio">
+          <input
+            type="radio"
+            onChange={ () => setSearchBarFilter('ingrediente') }
+            data-testid="ingredient-search-radio"
+            name="filter"
+            value="ingrediente"
+          />
+          Ingrediente
+        </label>
+        <label htmlFor="name-search-radio">
+          <input
+            type="radio"
+            onChange={ () => setSearchBarFilter('nome') }
+            data-testid="name-search-radio"
+            name="filter"
+            value="nome"
+          />
+          Nome
+        </label>
+        <label htmlFor="first-letter-search-radio">
+          <input
+            type="radio"
+            onChange={ () => setSearchBarFilter('letra') }
+            data-testid="first-letter-search-radio"
+            name="filter"
+            value="letra"
+          />
+          Primeira Letra
+        </label>
+        <button
+          type="button"
+          data-testid="exec-search-btn"
+          onClick={ handleClick }
+        >
+          {' '}
+          Buscar
 
-      </button>
-      { searchBar && <RecipeCard cardArray={ cardArray } /> }
-    </>
+        </button>
+        { searchBar && <RecipeCard cardArray={ cardArray } /> }
+      </div>
+    </nav>
   );
 }
 

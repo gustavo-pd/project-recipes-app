@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import '../components/css/Profile.css';
 
 function Profile() {
   const [email, setEmail] = useState('');
@@ -27,31 +28,39 @@ function Profile() {
   };
 
   return (
-    <main>
+    <main className="main-profile">
       <Header title="Perfil" bool={ false } />
-      Profile
-      <p data-testid="profile-email">{email}</p>
-      <button
-        data-testid="profile-done-btn"
-        type="button"
-        onClick={ () => redirect('/receitas-feitas') }
-      >
-        Receitas Feitas
-      </button>
-      <button
-        data-testid="profile-favorite-btn"
-        type="button"
-        onClick={ () => redirect('/receitas-favoritas') }
-      >
-        Receitas Favoritas
-      </button>
-      <button
-        data-testid="profile-logout-btn"
-        type="button"
-        onClick={ () => logOut() }
-      >
-        Sair
-      </button>
+      <div className="profile-page">
+        <div className="container-buttons">
+          <div className="box-email">
+            <p className="profile-email">{email}</p>
+          </div>
+          <button
+            className="profile-btn"
+            data-testid="profile-done-btn"
+            type="button"
+            onClick={ () => redirect('/receitas-feitas') }
+          >
+            Receitas Feitas
+          </button>
+          <button
+            className="profile-btn"
+            data-testid="profile-favorite-btn"
+            type="button"
+            onClick={ () => redirect('/receitas-favoritas') }
+          >
+            Receitas Favoritas
+          </button>
+          <button
+            className="profile-btn"
+            data-testid="profile-logout-btn"
+            type="button"
+            onClick={ () => logOut() }
+          >
+            Sair
+          </button>
+        </div>
+      </div>
       <Footer />
     </main>
   );
