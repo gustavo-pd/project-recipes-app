@@ -5,10 +5,13 @@
   align-items: center;
   margin: 40px;
   justify-content: flex-end;
-  flex-wrap: wrap;
 }
 
 .title {
   height: 20px;
   margin-bottom: 10px;
+}
+
+.instructions-str {
+  width: 380px;
 }
