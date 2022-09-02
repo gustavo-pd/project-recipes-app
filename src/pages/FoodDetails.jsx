@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 import useFetchRecomendacoes from '../hooks/useFetchRecomendacoes';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
@@ -8,6 +10,7 @@ import Ingredients from '../components/details recipes/Ingredients';
 import AppContext from '../context/AppContext';
 import Recommended from '../components/details recipes/Recommended';
 import ButtonDetails from '../components/details recipes/ButtonDetails';
+import '../components/css/FoodDetails.css';
 
 function FoodDetails(props) {
   const { detailsPage } = useContext(AppContext);
@@ -21,7 +24,8 @@ function FoodDetails(props) {
   useFetchRecomendacoes(recommendationsURL, 'drinks');
 
   return (
-    <main>
+    <main className="main-food-details">
+      <Header />
       <HeaderRecipes type="Meal" />
       <Instructions />
       <Ingredients recipe={ detailsPage } id={ id } type={ meals } />
@@ -40,8 +44,7 @@ function FoodDetails(props) {
       </video>
       <Recommended page="bebidas" type="Drink" idType="idDrink" />
       <ButtonDetails id={ id } type={ meals } />
-      <br />
-      <br />
+      <Footer />
     </main>
   );
 }

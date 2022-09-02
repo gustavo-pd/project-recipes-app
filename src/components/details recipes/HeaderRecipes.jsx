@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AppContext from '../../context/AppContext';
 import FavoriteIcon from './FavoriteIcon';
 import ShareIcon from './ShareIcon';
+import './css/HeaderRecipes.css';
 
 // const copy = require('clipboard-copy');
 
@@ -30,20 +31,20 @@ function HeaderRecipes({ type, bool = false }) {
   }, [detailsPage]);
 
   return (
-    <header>
-      <img
-        height="100px"
-        src={ detailsPage[image] }
-        alt={ detailsPage[title] }
-        data-testid="recipe-photo"
-      />
-      <h1 data-testid="recipe-title">{detailsPage[title]}</h1>
-      <ShareIcon type={ type } />
-      <FavoriteIcon type={ type } favorite={ favorite } setFavorite={ setFavorite } />
-      {(bool
-        ? <p data-testid="recipe-category">{strAlcoholic}</p>
-        : <p data-testid="recipe-category">{strCategory}</p>
-      )}
+    <header className="main-header-details">
+      <div className="card">
+        <img
+          className="image-details"
+          src={ detailsPage[image] }
+          alt={ detailsPage[title] }
+          data-testid="recipe-photo"
+        />
+        <h2 data-testid="recipe-title">{detailsPage[title]}</h2>
+      </div>
+      <div className="icons">
+        <ShareIcon type={ type } />
+        <FavoriteIcon type={ type } favorite={ favorite } setFavorite={ setFavorite } />
+      </div>
     </header>
   );
 }

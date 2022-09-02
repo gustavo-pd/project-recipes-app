@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import AppContext from '../../context/AppContext';
 import shareIcon from '../../images/shareIcon.svg';
+import './css/Icons.css';
 
 const copy = window.navigator.clipboard;
 
@@ -51,15 +52,16 @@ function ShareIcon({ type, recipe = {}, index = '' }) {
   }
 
   return (
-    <div>
+    <div className="main-icon">
       { linkCopy && 'Link copiado!'}
       <button
+        className="button-icon"
         onClick={ handleShare }
         type="button"
         src={ shareIcon }
         data-testid={ (index !== '') ? `${index}-horizontal-share-btn` : 'share-btn' }
       >
-        <img src={ shareIcon } alt="Compartilhar" />
+        <img src={ shareIcon } alt="Compartilhar" className="image-icon" />
       </button>
     </div>
   );

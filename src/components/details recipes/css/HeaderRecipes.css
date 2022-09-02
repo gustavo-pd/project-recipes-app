@@ -1,0 +1,31 @@
+.main-header-details {
+  align-items: center;
+  display: flex;
+  margin-top: 65px;
+  margin-bottom: 20px;
+  height: 280px;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+.image-details {
+  margin-top: 5px;
+  height: 220px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.card {
+  height: 260px;
+  width: 210px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px;
+}
+
+.icons {
+  flex-direction: column;
+  display: flex;
+  height: 260px;
+  width: 70px;
+}

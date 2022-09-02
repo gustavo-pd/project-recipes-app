@@ -4,6 +4,7 @@ import { saveFavoriteInLocalStorage } from '../../services/saveInProgressRecipes
 import blackHeartIcon from '../../images/blackHeartIcon.svg';
 import whiteHeartIcon from '../../images/whiteHeartIcon.svg';
 import AppContext from '../../context/AppContext';
+import './css/Icons.css';
 
 function FavoriteIcon({ type, favorite, setFavorite, recipe = {}, index = '' }) {
   const { detailsPage, favoriteIcon, setFavoriteIcon } = useContext(AppContext);
@@ -32,8 +33,9 @@ function FavoriteIcon({ type, favorite, setFavorite, recipe = {}, index = '' }) 
   }
 
   return (
-    <div>
+    <div className="main-icon">
       <button
+        className="button-icon"
         type="button"
         data-testid={ (index !== '') ? `${index}-horizontal-favorite-btn`
           : 'favorite-btn' }
