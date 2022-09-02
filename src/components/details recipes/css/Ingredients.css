@@ -1,0 +1,18 @@
+.ingredients-main {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  justify-content: flex-start;
+}
+
+.title {
+  height: 20px;
+}
+
+.ol {
+  margin-top: 10px;
+  text-align: center;
+  height: 25px;
+}

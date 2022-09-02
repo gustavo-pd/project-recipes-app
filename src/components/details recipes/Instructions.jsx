@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
+import './css/Instructions.css';
 
 function Instructions() {
   const { detailsPage: { strInstructions } } = useContext(AppContext);
   return (
-    <section data-testid="instructions">
-      <h3>Instructions</h3>
-      <p>{strInstructions}</p>
-    </section>
+    <div data-testid="instructions" className="instructions-main">
+      <h3 className="title">Instructions</h3>
+      <p className="instructions-str">{strInstructions}</p>
+    </div>
   );
 }
 

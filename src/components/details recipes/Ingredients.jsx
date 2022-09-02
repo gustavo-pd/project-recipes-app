@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Lista from './Lista';
 import AppContext from '../../context/AppContext';
+import './css/Ingredients.css';
 
 function Ingredients({ recipe, boolean = false, id, type }) {
   const { disabledButtonPrograss, setEndRecipe } = useContext(AppContext);
@@ -50,9 +51,9 @@ function Ingredients({ recipe, boolean = false, id, type }) {
   }, [recipe]);
 
   return (
-    <main>
-      <h3>Ingredients</h3>
-      <ol>
+    <main className="ingredients-main">
+      <h3 className="title">Ingredients</h3>
+      <ol className="ol">
         { igredientes.map((string, index) => (
           <Lista
             buttonDisabled={ buttonDisabled }
