@@ -5,6 +5,7 @@
   align-items: center;
   margin: 40px;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .title {
