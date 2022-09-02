@@ -1,10 +1,10 @@
 .instructions-main {
-  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 40px;
   justify-content: flex-end;
+  height: auto;
 }
 
 .title {
@@ -13,5 +13,6 @@
 }
 
 .instructions-str {
-  width: 380px;
+  width: 360px;
+  height: auto;
 }

@@ -10,7 +10,7 @@ function Recommended({ page, type, idType }) {
   const maxLength = 5;
   const filterRecommended = recomendacoes.filter((obj, index) => index <= maxLength);
   return (
-    <section className="recommended-card">
+    <div className="recommended-card">
       {filterRecommended.map((drinkOrMeals, index) => (
         <CardRecipe
           page={ page }
@@ -22,7 +22,7 @@ function Recommended({ page, type, idType }) {
           bool
         />
       ))}
-    </section>
+    </div>
   );
 }
 

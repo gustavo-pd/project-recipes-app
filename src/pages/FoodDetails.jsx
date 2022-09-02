@@ -14,7 +14,6 @@ import '../components/css/FoodDetails.css';
 
 function FoodDetails(props) {
   const { detailsPage } = useContext(AppContext);
-  const { strYoutube } = detailsPage;
   const { match: { params: { id } } } = props;
   const foodURL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const meals = 'meals';
@@ -29,21 +28,12 @@ function FoodDetails(props) {
       <HeaderRecipes type="Meal" />
       <Instructions />
       <Ingredients recipe={ detailsPage } id={ id } type={ meals } />
-      <video
-        width="320"
-        height="240"
-        data-testid="video"
-        src={ strYoutube }
-      >
-        <track
-          default
-          kind="captions"
-          srcLang="en"
-          src={ strYoutube }
-        />
-      </video>
-      <Recommended page="bebidas" type="Drink" idType="idDrink" />
-      <ButtonDetails id={ id } type={ meals } />
+      <div className="recommended-container">
+        <Recommended page="bebidas" type="Drink" idType="idDrink" />
+      </div>
+      <div className="button-area">
+        <ButtonDetails id={ id } type={ meals } />
+      </div>
       <Footer />
     </main>
   );

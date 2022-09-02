@@ -2,3 +2,20 @@
   height: 100%;
   width: 100%;
 }
+
+.recommended-container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding-bottom: 130px;
+}
+
+.button-area {
+  height: auto;
+}
+
+.container-inst {
+  height: auto;
+  padding-bottom: 80px;
+}

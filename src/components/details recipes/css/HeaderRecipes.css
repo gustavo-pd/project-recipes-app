@@ -1,11 +1,11 @@
 .main-header-details {
   align-items: center;
   display: flex;
-  margin-top: 65px;
+  padding-top: 90px;
   margin-bottom: 20px;
   height: 280px;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -24,8 +24,7 @@
 }
 
 .icons {
-  flex-direction: column;
+  flex-direction: row;
   display: flex;
-  height: 260px;
-  width: 70px;
+  height: 60px;
 }

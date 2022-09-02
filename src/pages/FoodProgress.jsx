@@ -1,12 +1,16 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import useFetchRecipeDetails from '../hooks/useFetchRecipeDetails';
 import HeaderRecipes from '../components/details recipes/HeaderRecipes';
 import Ingredients from '../components/details recipes/Ingredients';
 import Instructions from '../components/details recipes/Instructions';
 import AppContext from '../context/AppContext';
 import { saveDoneRecipeInLocalStorage } from '../services/saveInProgressRecipes';
+import '../components/css/FoodDetails.css';
+import '../components/details recipes/css/ButtonDetails.css';
 
 function FoodProgress(props) {
   const history = useHistory();
@@ -44,18 +48,25 @@ function FoodProgress(props) {
   }
 
   return (
-    <main>
+    <main className="main-food-details">
+      <Header />
       <HeaderRecipes type="Meal" />
-      <Ingredients boolean id={ id } type={ meals } recipe={ detailsPage } />
-      <Instructions />
-      <button
-        type="button"
-        data-testid="finish-recipe-btn"
-        disabled={ endRecipe }
-        onClick={ handleClik }
-      >
-        Finalizar Receita
-      </button>
+      <Ingredients id={ id } type={ meals } recipe={ detailsPage } boolean />
+      <div className="container-inst">
+        <Instructions />
+      </div>
+      <div className="button-area">
+        <button
+          className="buttonStart"
+          type="button"
+          data-testid="finish-recipe-btn"
+          disabled={ endRecipe }
+          onClick={ handleClik }
+        >
+          Finalizar Receita
+        </button>
+      </div>
+      <Footer />
     </main>
   );
 }

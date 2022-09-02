@@ -32,7 +32,7 @@ function DoneRecipes() {
       setFilterDoneRecipes(doneRecipes);
     }
   };
-  
+
   return (
     <div className="main-meal">
       <Header title="Receitas Feitas" bool={ false } />
