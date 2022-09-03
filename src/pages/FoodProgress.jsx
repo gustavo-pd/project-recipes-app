@@ -49,7 +49,7 @@ function FoodProgress(props) {
 
   return (
     <main className="main-food-details">
-      <Header />
+      <Header title="Comidas" />
       <HeaderRecipes type="Meal" />
       <Ingredients id={ id } type={ meals } recipe={ detailsPage } boolean />
       <div className="container-inst">

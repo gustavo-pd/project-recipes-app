@@ -8,6 +8,9 @@ import Ingredients from '../components/details recipes/Ingredients';
 import AppContext from '../context/AppContext';
 import ButtonDetails from '../components/details recipes/ButtonDetails';
 import Recommended from '../components/details recipes/Recommended';
+import '../components/css/FoodDetails.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function DrinkDetails(props) {
   const { detailsPage } = useContext(AppContext);
@@ -20,12 +23,18 @@ function DrinkDetails(props) {
   useFetchRecomendacoes(recommendationsURL, 'meals');
 
   return (
-    <main>
+    <main className="main-food-details">
+      <Header title="Bebidas" />
       <HeaderRecipes type="Drink" bool />
       <Instructions />
       <Ingredients recipe={ detailsPage } id={ id } type={ drinks } />
-      <Recommended page="comidas" type="Meal" idType="idMeal" />
-      <ButtonDetails id={ id } type={ drinks } />
+      <div className="recommended-container">
+        <Recommended page="comidas" type="Meal" idType="idMeal" />
+      </div>
+      <div className="button-area">
+        <ButtonDetails id={ id } type={ drinks } />
+      </div>
+      <Footer />
     </main>
   );
 }

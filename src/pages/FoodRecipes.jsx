@@ -68,7 +68,7 @@ function FoodRecipes() {
                 index={ index }
               />
             ))) }
-        </div>
+      </div>
       <Footer />
     </main>
   );

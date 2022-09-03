@@ -24,7 +24,7 @@ function FoodDetails(props) {
 
   return (
     <main className="main-food-details">
-      <Header />
+      <Header title="Comidas" />
       <HeaderRecipes type="Meal" />
       <Instructions />
       <Ingredients recipe={ detailsPage } id={ id } type={ meals } />

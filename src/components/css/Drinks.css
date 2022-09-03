@@ -12,10 +12,11 @@
 }
 
 .container-cards {
-  height: 220px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 10px;
+  padding-block-end: 75px;
 }
