@@ -1,5 +1,8 @@
 <h1>🌭 Recipes APP 🍸</h1>
 
+<p>Link do projeto: <link>https://project-starwars-planets-search-pied.vercel.app/</link></p>
+</br>
+
 <h2>Índice</h2>
 <h4>- <a href="#context">Contexto</a></h4>
 <h4>- <a href="#tecnologies">Técnologias utilizadas</a></h4>
