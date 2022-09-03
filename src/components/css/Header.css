@@ -1,6 +1,6 @@
 .header {
   align-items: center;
-  background-color: brown;
+  background-color: white;
   display: flex;
   height: 58px;
   justify-content: space-around;
@@ -23,11 +23,11 @@
   width: 60px;
   border-radius: 8px;
   border-width: 0px;
-  background-color: brown;
+  background-color: white;
 }
 
 .button-search:hover {
-  background-color: rgb(235, 235, 235);
+  background-color: white;
 }
 
 .search-icon {

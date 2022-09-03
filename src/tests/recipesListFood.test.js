@@ -176,7 +176,7 @@ describe('', () => {
     userEvent.type(screen.getByTestId(searchInput), 'tomato');
     userEvent.click(button);
 
-    await screen.findByText(/Brown Stew Chicken/i);
+    await screen.findByText(/white Stew Chicken/i);
     await screen.findByText(/Callaloo Jamaican Style/i);
   });
 });

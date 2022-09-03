@@ -8,7 +8,6 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: white;
 }
 
 /* .title {
@@ -22,60 +21,65 @@
 } */
 
 input::placeholder {
-  color: rgb(128, 33, 33);
+  color: black;
   font-size: 18px;
 }
 
 .email-input {
-  background: rgba(138, 15, 15, 0.4);
+  background: white;
   border: 1px solid black;
-  border-radius: 20px;
+  border-radius: 0px;
   box-sizing: border-box;
-  color: rgb(122, 31, 31);
+  color: black;
   height: 70px;
   margin-top: 10px;
   width: 280px;
   border-width: 0px;
   font-size: 18px;
   padding: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .email-input:hover {
-  background: rgba(175, 175, 175, 0.4);
+  background: green;
+  color: white;
 }
 
 .password-input {
-  background: rgba(138, 15, 15, 0.4);
+  background: white;
   border: 1px solid black;
-  border-radius: 20px;
+  border-radius: 0px;
   box-sizing: border-box;
-  color: rgb(122, 31, 31);
+  color: black;
   height: 70px;
   margin-top: 10px;
   width: 280px;
   border-width: 0px;
   font-size: 18px;
   padding: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .password-input:hover {
-  background: rgba(175, 175, 175, 0.4);
+  background: green;
+  color: white;
 }
 
 .button-login {
-  background: rgba(175, 175, 175, 0.4);
-  border-radius: 15px;
-  color: brown;
+  background: white;
+  border-radius: 0px;
+  color: black;
   font-size: 20px;
   height: 40px;
   margin-top: 20px;
   width: 90px;
   border-width: 0px;
   font-weight: 550;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .button-login:hover {
-  background: brown;
+  background: green;
   color: white;
 }
 

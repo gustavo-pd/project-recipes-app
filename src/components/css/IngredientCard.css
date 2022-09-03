@@ -2,8 +2,12 @@
   height: 215px;
   width: 160px;
   text-align: center;
-  background-color: rgb(235, 235, 235);
+  background-color: white;
   border-radius: 15px;
+}
+
+.div-ingredient:hover {
+  background-color: green;
 }
 
 .image-ingredient {
@@ -13,10 +17,15 @@
 }
 
 .str-ingredient {
-  color: brown;
+  font-family: 'cookie';
+  color: black;
   font-weight: 550;
   font-size: 18px;
   text-align: center;
   height: 100%;
   width: 100%;
+}
+
+.str-ingredient:hover {
+  color: white;
 }

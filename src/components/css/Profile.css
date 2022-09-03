@@ -10,24 +10,24 @@
 }
 
 .profile-btn {
+  font-family: 'cookie';
   margin: 10px;
-  background: rgb(233, 233, 233);
+  background: white;
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Roboto , sans-serif;
-  font-size: 26px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 550;
-  height: 70px;
+  height: 60px;
   line-height: 37px;
-  width: 300px;
-  color: brown;
+  width: 240px;
+  color: black;
   border-width: 0px;
 }
 
 .profile-btn:hover {
-  background-color: brown;
-  color: rgb(233, 233, 233);
+  background-color: green;
+  color: white;
 }
 
 .container-buttons {
@@ -46,7 +46,7 @@
 }
 
 .profile-email {
-  color: brown;
+  color: black;
   font-size: 26px;
   font-weight: 550;
 }

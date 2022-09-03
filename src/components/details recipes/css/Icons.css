@@ -3,11 +3,11 @@
   width: 60px;
   border-radius: 8px;
   border-width: 0px;
-  background-color: rgb(235, 235, 235);
+  background-color: white;
 }
 
 .button-icon:hover {
-  background-color: brown;
+  background-color: white;
 }
 
 .main-icon {

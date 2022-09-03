@@ -1,19 +1,20 @@
 .category-button {
+  font-family: 'cookie';
   height: 35px;
   width: 90px;
-  background-color: brown;
+  background-color: white;
   border-radius: 7px;
   border-width: 0px;
-  box-shadow: 4px 2px 2px black;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 16px;
   font-weight: 550;
-  color: white;
+  color: black;
 }
 
 .category-button:hover {
-  background-color: rgb(235, 235, 235);
-  color: brown;
-  border-color: brown;
+  background-color: green;
+  color: white;
+  border-color: green;
 }
 
 .container {

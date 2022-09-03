@@ -4,9 +4,15 @@
   width: 150px;
   margin: 5px;
   text-align: center;
-  background-color: rgb(235, 235, 235);
+  background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cardRecipe:hover {
+
+  background-color: green;
+  border-color: green;
 }
 
 .imageCardRecipe {
@@ -17,12 +23,16 @@
 }
 
 .nameCardRecipe {
-  color: brown;
+  color: black;
   font-weight: 550;
   font-size: 18px;
   text-align: center;
   height: 100%;
   width: 100%;
+}
+
+.nameCardRecipe:hover {
+  color: white;
 }
 
 .link-card {
@@ -34,4 +44,8 @@
   height: 60px;
   margin: 0 auto;
   justify-content: flex-end;
+}
+
+.card-title:hover {
+  color: white;
 }
