@@ -10,7 +10,7 @@
 
 <h2 id="context">Contexto</h2>
 
-<p>O Recipes App foi criado para ser um aplicativo de receitas de comida e drinks, com diversas funcionalidades diferentes.</p>
+<p>O Recipes App foi criado para ser um aplicativo de receitas para celular, com diversas funcionalidades diferentes.</p>
 <p>Este projeto foi realizado durante o curso da Trybe, com seu objetivo fixar todos os conteúdos estudados durante o módulo de front-end, foi realizado em grupo, para reforçar simularmos o dia-a-dia de trabalho em uma empresa.</p>
 <p>Este projeto foi realizado em novembro de 2021, no módulo de Front-end.</p>
 <p>As pessoas realizadoras deste projeto são:</p>
@@ -42,9 +42,12 @@
 <p>No desenvolvimento do projeto eram feitas duas meetings diárias, para definir as jobs de cada um e visualizar como estava o progresso do site.</p>
 <p>Utilizamos o Trello para organização, aplicando a metodologia ágil Kanban.</p>
 <p>Na aplicação desenvolvida é possível ver, buscar, filtrar, favoritar e acompanhar o progresso de preparação de receitas e drinks!</p>
+<p>A aplicação foi desenvolvida em primeiro plano para celular, porém com a responsividade aplicada nas páginas é possível também utilizar no computador!</p>
 </br>
 
 <h2 id="howtouse">Como executar o projeto</h2>
+
+<p>Link do projeto: <link>https://project-recipes-app-gustavo-pd.vercel.app/</link></p>
 
   1. Clone o repositório
     * `git clone https://github.com/gustavo-pd/project-recipes-app`.
