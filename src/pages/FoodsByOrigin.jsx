@@ -72,7 +72,7 @@ function FoodsByOrigin() {
 
   return (
     <main className="main-origin">
-      <Header title="Explorar" bool />
+      <Header title="Explore" bool />
       <div className="centerize">
         <select
           className="select-button"

@@ -38,7 +38,7 @@ function FavoriteRecipes() {
 
   return (
     <div className="main-meal">
-      <Header title="Receitas Favoritas" bool={ false } />
+      <Header title="Favorite Recipes" bool={ false } />
       <div className="nav">
         <FilterButton name="All" id="filter-by-all-btn" onClick={ handleFilter } />
         <FilterButton name="Food" id="filter-by-food-btn" onClick={ handleFilter } />

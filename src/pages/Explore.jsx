@@ -15,7 +15,7 @@ function Explore({ history }) {
 
   return (
     <main className="main-explore">
-      <Header title="Explorar" bool={ false } />
+      <Header title="Explore" bool={ false } />
       <div className="explore-page">
         <div className="container-buttons">
           <button
@@ -24,7 +24,7 @@ function Explore({ history }) {
             className="explore-btn"
             onClick={ redirectExploreFood }
           >
-            Explorar Comidas
+            Explore Meals
           </button>
           <button
             data-testid="explore-drinks"
@@ -32,7 +32,7 @@ function Explore({ history }) {
             className="explore-btn"
             onClick={ redirectExploreDrinks }
           >
-            Explorar Bebidas
+            Explore Drinks
           </button>
         </div>
       </div>

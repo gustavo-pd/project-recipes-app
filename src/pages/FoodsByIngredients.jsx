@@ -39,7 +39,7 @@ function FoodsByIngredients() {
 
   return (
     <main className="main-page">
-      <Header title="Ingredientes" bool={ false } />
+      <Header title="Meal Ingredients" bool={ false } />
       <div className="containers">
         { arrayIngredients.map(({ strIngredient }, index) => (
           <button

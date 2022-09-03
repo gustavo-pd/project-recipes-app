@@ -16,18 +16,18 @@ function ExploreFood({ history }) {
   const handleClick = ({ target }) => {
     const btn = target.innerHTML;
 
-    if (btn === 'Por Ingredientes') {
+    if (btn === 'By Ingredients') {
       history.push('/explorar/comidas/ingredientes');
-    } else if (btn === 'Por Local de Origem') {
+    } else if (btn === 'By Area Of Origin') {
       history.push('/explorar/comidas/area');
-    } else if (btn === 'Me Surpreenda!') {
+    } else if (btn === 'Surprise Me!') {
       history.push(`/comidas/${randomId}`);
     }
   };
 
   return (
     <main className="main-explore">
-      <Header title="Explorar Comidas" bool={ false } />
+      <Header title="Explore Meals" bool={ false } />
       <div className="explore-page">
         <div className="container-buttons">
           <button
@@ -36,7 +36,7 @@ function ExploreFood({ history }) {
             className="explore-btn"
             onClick={ handleClick }
           >
-            Por Ingredientes
+            By Ingredients
           </button>
           <button
             data-testid="explore-by-area"
@@ -44,7 +44,7 @@ function ExploreFood({ history }) {
             className="explore-btn"
             onClick={ handleClick }
           >
-            Por Local de Origem
+            By Area Of Origin
           </button>
           <button
             data-testid="explore-surprise"
@@ -52,7 +52,7 @@ function ExploreFood({ history }) {
             onClick={ handleClick }
             className="explore-btn"
           >
-            Me Surpreenda!
+            Surprise Me!
           </button>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import Logo from '../images/logo.png';
 import '../components/css/Login.css';
 
 function Login() {
@@ -21,6 +22,12 @@ function Login() {
 
   return (
     <div className="mainPage">
+      <img
+        className="image-logo"
+        src={ Logo }
+        alt="Logo"
+      />
+      <h1>Recipes App</h1>
       <form className="form-centered">
         <input
           data-testid="email-input"
@@ -28,7 +35,7 @@ function Login() {
           type="text"
           name="username"
           onChange={ (e) => setEmail(e.target.value) }
-          placeholder="Digite seu email"
+          placeholder="Type your e-mail"
           className="email-input"
         />
         <input
@@ -37,7 +44,7 @@ function Login() {
           type="password"
           name="password"
           onChange={ (e) => setPassword(e.target.value) }
-          placeholder="Digite sua senha"
+          placeholder="Type your password"
           className="password-input"
         />
         <button
@@ -47,7 +54,7 @@ function Login() {
           onClick={ handleClick }
           className="button-login"
         >
-          Entrar
+          Sign in
         </button>
       </form>
     </div>

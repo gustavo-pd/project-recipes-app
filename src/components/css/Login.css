@@ -99,4 +99,12 @@ input::placeholder {
   justify-content: center;
   height: 100%;
   width: 100%;
+  padding-bottom: 100px;
+}
+
+.image-logo {
+  margin-top: 100px;
+  width: 140px;
+  height: 200px;
+  padding-bottom: 15px;
 }

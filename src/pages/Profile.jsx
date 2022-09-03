@@ -29,7 +29,7 @@ function Profile() {
 
   return (
     <main className="main-profile">
-      <Header title="Perfil" bool={ false } />
+      <Header title="Profile" bool={ false } />
       <div className="profile-page">
         <div className="container-buttons">
           <div className="box-email">
@@ -41,7 +41,7 @@ function Profile() {
             type="button"
             onClick={ () => redirect('/receitas-feitas') }
           >
-            Receitas Feitas
+            Done Recipes
           </button>
           <button
             className="profile-btn"
@@ -49,7 +49,7 @@ function Profile() {
             type="button"
             onClick={ () => redirect('/receitas-favoritas') }
           >
-            Receitas Favoritas
+            Favorite Recipes
           </button>
           <button
             className="profile-btn"
@@ -57,7 +57,7 @@ function Profile() {
             type="button"
             onClick={ () => logOut() }
           >
-            Sair
+            Exit
           </button>
         </div>
       </div>

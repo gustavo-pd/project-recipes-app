@@ -23,7 +23,7 @@ function DrinkRecipes() {
 
   return (
     <main className="main-drinks">
-      <Header title="Bebidas" bool />
+      <Header title="Drinks" bool />
       <div className="nav">
         { !searchBar && (
           <div className="container">

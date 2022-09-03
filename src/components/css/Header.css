@@ -18,23 +18,13 @@
   width: 48px;
 }
 
-.button-search {
-  margin-right: 10px;
-  height: 50px;
-  width: 60px;
-  border-radius: 8px;
-  border-width: 0px;
-  background-color: white;
-}
-
 .button-search:hover {
   background-color: white;
 }
 
 .search-icon {
-  margin-top: 3px;
-  height: 39px;
-  width: 39px;
+  height: 47px;
+  width: 47px;
 }
 
 .title-box {

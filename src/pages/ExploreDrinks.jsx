@@ -16,16 +16,16 @@ function ExploreDrinks({ history }) {
   const handleClick = ({ target }) => {
     const btn = target.innerHTML;
 
-    if (btn === 'Por Ingredientes') {
+    if (btn === 'By Ingredients') {
       history.push('/explorar/bebidas/ingredientes');
-    } else if (btn === 'Me Surpreenda!') {
+    } else if (btn === 'Surprise Me!') {
       history.push(`/bebidas/${randomId}`);
     }
   };
 
   return (
     <main className="main-explore">
-      <Header title="Explorar Bebidas" bool={ false } />
+      <Header title="Explore Drinks" bool={ false } />
       <div className="explore-page">
         <div className="container-buttons">
           <button
@@ -34,7 +34,7 @@ function ExploreDrinks({ history }) {
             className="explore-btn"
             onClick={ handleClick }
           >
-            Por Ingredientes
+            By Ingredients
           </button>
           <button
             data-testid="explore-surprise"
@@ -42,7 +42,7 @@ function ExploreDrinks({ history }) {
             className="explore-btn"
             onClick={ handleClick }
           >
-            Me Surpreenda!
+            Surprise Me!
           </button>
         </div>
       </div>

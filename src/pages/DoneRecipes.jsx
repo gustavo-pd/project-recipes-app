@@ -35,7 +35,7 @@ function DoneRecipes() {
 
   return (
     <div className="main-meal">
-      <Header title="Receitas Feitas" bool={ false } />
+      <Header title="Done Recipes" bool={ false } />
       <div className="nav">
         <FilterButton name="All" onClick={ handleFilter } />
         <FilterButton name="Food" onClick={ handleFilter } />

@@ -23,7 +23,7 @@ function FoodRecipes() {
 
   return (
     <main className="main-meal">
-      <Header title="Comidas" bool />
+      <Header title="Meals" bool />
       <div className="nav">
         { !searchBar && (
           <div className="container">

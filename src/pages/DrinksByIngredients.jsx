@@ -39,7 +39,7 @@ function DrinksByIngredients() {
 
   return (
     <main className="main-page">
-      <Header title="Ingredientes" bool={ false } />
+      <Header title="Drink Ingredients" bool={ false } />
       <div className="containers">
         {arrayIngredients.map(({ strIngredient1 }, index) => (
           <button
