@@ -1,0 +1,43 @@
+.main-origin {
+  height: 100%;
+  width: 100%;
+}
+
+.select-button {
+  margin-top: 70px;
+  height: 20px;
+  width: 220px;
+  margin-bottom: 20px;
+}
+
+.list-card {
+  display: flex;
+  text-align: center;
+  height: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 70px;
+}
+
+.image-link {
+  margin-top: 5px;
+  height: 170px;
+  width: 150px;
+}
+
+.div-link {
+  height: 210px;
+  width: 160px;
+  background-color: rgb(235, 235, 235);
+  margin: 5px;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-width: 0px;
+}
+
+.centerize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

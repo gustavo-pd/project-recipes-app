@@ -1,0 +1,22 @@
+.div-ingredient {
+  height: 215px;
+  width: 160px;
+  text-align: center;
+  background-color: rgb(235, 235, 235);
+  border-radius: 15px;
+}
+
+.image-ingredient {
+  height: 160px;
+  width: 120px;
+  border-radius: 15px;
+}
+
+.str-ingredient {
+  color: brown;
+  font-weight: 550;
+  font-size: 18px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,23 @@
+.main-page {
+  height: 100%;
+  width: 100%;
+}
+
+.button-ingredient {
+  height: 215px;
+  width: 160px;
+  margin: 5px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-width: 0px;
+}
+
+.containers {
+  display: flex;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  text-align: center;
+  height: auto;
+  justify-content: center;
+}

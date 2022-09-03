@@ -4,6 +4,7 @@ import AppContext from '../context/AppContext';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import IngredientsCard from '../components/IngredientsCard';
+import '../components/css/ByIngredients.css';
 
 function FoodsByIngredients() {
   const { setMealRecipeIngredients, setRenderMealIngredients } = useContext(AppContext);
@@ -37,24 +38,27 @@ function FoodsByIngredients() {
   const arrayIngredients = ingredients.slice(0, limitArray);
 
   return (
-    <main>
-      <Header title="Explorar Ingredientes" bool={ false } />
-      {arrayIngredients.map(({ strIngredient }, index) => (
-        <button
-          key={ index }
-          type="button"
-          onClick={ () => setRecipeMeal(strIngredient) }
-        >
-          <IngredientsCard
-            key={ strIngredient }
-            index={ index }
-            name={ strIngredient }
-            image={
-              `https://www.themealdb.com/images/ingredients/${strIngredient}-Small.png`
-            }
-          />
-        </button>
-      ))}
+    <main className="main-page">
+      <Header title="Ingredientes" bool={ false } />
+      <div className="containers">
+        { arrayIngredients.map(({ strIngredient }, index) => (
+          <button
+            className="button-ingredient"
+            key={ index }
+            type="button"
+            onClick={ () => setRecipeMeal(strIngredient) }
+          >
+            <IngredientsCard
+              key={ strIngredient }
+              index={ index }
+              name={ strIngredient }
+              image={
+                `https://www.themealdb.com/images/ingredients/${strIngredient}-Small.png`
+              }
+            />
+          </button>
+        )) }
+      </div>
       <Footer />
     </main>
   );

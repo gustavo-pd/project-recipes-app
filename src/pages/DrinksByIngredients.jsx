@@ -4,6 +4,7 @@ import AppContext from '../context/AppContext';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import IngredientsCard from '../components/IngredientsCard';
+import '../components/css/ByIngredients.css';
 
 function DrinksByIngredients() {
   const { setRecipeIngredients, setRenderDrinksIngredients } = useContext(AppContext);
@@ -37,24 +38,27 @@ function DrinksByIngredients() {
   const arrayIngredients = ingredients.slice(0, limitArray);
 
   return (
-    <main>
-      <Header title="Explorar Ingredientes" bool={ false } />
-      {arrayIngredients.map(({ strIngredient1 }, index) => (
-        <button
-          key={ index }
-          type="button"
-          onClick={ () => setRecipeDrink(strIngredient1) }
-        >
-          <IngredientsCard
-            key={ strIngredient1 }
-            index={ index }
-            name={ strIngredient1 }
-            image={
-              `https://www.thecocktaildb.com/images/ingredients/${strIngredient1}-Small.png`
-            }
-          />
-        </button>
-      ))}
+    <main className="main-page">
+      <Header title="Ingredientes" bool={ false } />
+      <div className="containers">
+        {arrayIngredients.map(({ strIngredient1 }, index) => (
+          <button
+            className="button-ingredient"
+            key={ index }
+            type="button"
+            onClick={ () => setRecipeDrink(strIngredient1) }
+          >
+            <IngredientsCard
+              key={ strIngredient1 }
+              index={ index }
+              name={ strIngredient1 }
+              image={
+                `https://www.thecocktaildb.com/images/ingredients/${strIngredient1}-Small.png`
+              }
+            />
+          </button>
+        ))}
+      </div>
       <Footer />
     </main>
   );

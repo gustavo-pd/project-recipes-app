@@ -1,18 +1,19 @@
 .cardRecipe {
   grid-template-rows: 100px 100px;
-  height: 215px;
-  width: 160px;
-  margin: 10px;
+  height: 210px;
+  width: 150px;
+  margin: 5px;
   text-align: center;
   background-color: rgb(235, 235, 235);
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .imageCardRecipe {
-  height: 160px;
-  width: 150px;
+  height: 155px;
+  width: 140px;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .nameCardRecipe {
