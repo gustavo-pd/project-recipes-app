@@ -1,4 +1,4 @@
-<h1>🌭 Recipes APP 🍸</h1>
+<h1>Recipes APP 🍸</h1>
 
 <p>Link do projeto: <link>https://project-recipes-app-gustavo-pd.vercel.app/</link></p>
 
