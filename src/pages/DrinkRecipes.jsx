@@ -20,6 +20,7 @@ function DrinkRecipes() {
 
   useFetchRecipes(url, key, setInitialDrinks);
   const arrayOfCategory = useFetchCategoryList(urlCategory, key);
+  const nine = 9;
 
   return (
     <main className="main-drinks">
@@ -40,7 +41,7 @@ function DrinkRecipes() {
         { !searchBar && arrayOfCategory.map((obj, index) => (
           <CategoryButtons
             key={ index }
-            categoryName={ obj.strCategory }
+            categoryName={ obj.strCategory.substr(0, nine) }
             type={ key }
             initial={ initialDrinks }
           />
@@ -69,7 +70,7 @@ function DrinkRecipes() {
                 index={ index }
               />
             ))) }
-        </div>
+      </div>
       <Footer />
     </main>
   );

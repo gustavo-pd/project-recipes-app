@@ -24,14 +24,16 @@
 }
 
 .nameCardRecipe {
+  justify-content: first baseline;
   color: black;
   font-weight: 550;
   font-size: 18px;
   text-align: center;
-  height: 25px;
-  width: 140px;
-  margin: 5px;
+  height: 32px;
   overflow: hidden;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .nameCardRecipe:hover {
@@ -40,13 +42,6 @@
 
 .link-card {
   text-decoration: none;
-}
-
-.card-title {
-  display: flex;
-  height: 60px;
-  margin: 0 auto;
-  justify-content: flex-end;
 }
 
 .card-title:hover {
