@@ -20,6 +20,7 @@ function FoodRecipes() {
 
   useFetchRecipes(url, key, setInitalFood);
   const arrayOfCategory = useFetchCategoryList(urlCategory, key);
+  const five = 5;
 
   return (
     <main className="main-meal">
